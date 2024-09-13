@@ -1,0 +1,73 @@
+/* Hamburger button */
+.hamburger {
+    display: none; /* Hidden by default */
+    font-size: 30px;
+    margin-right: 30px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: #fff;
+  }
+  
+  /* Sidebar styles */
+  .sidebar {
+    position: fixed;
+    top: 0px;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: rgba(0,0,0,1);
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    z-index: 2000;
+  }
+  
+  .sidebar.open {
+    left: 0;
+  }
+  
+  .sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar-item {
+    padding: 15px 20px;
+    text-align: left;
+    font-size: 35px;
+    color: #098ce9;
+    cursor: pointer;
+  }
+  
+  .sidebar-item:hover {
+    background-color: #575757;
+  }
+  
+  /* Close button */
+  .close-btn {
+    top: 10px;
+    right: 20px;
+    font-size: 40px;
+    color: #098ce9;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+  }
+  .sidebar-logo{
+    width: 40px;
+    position: absolute;
+    left: 20px;
+    top: 14px;
+  }
+  @media (max-width: 768px) {
+    .navbar-menu {
+      display: none; /* Hide the main navbar menu */
+    }
+  
+    .hamburger {
+      display: block; /* Show hamburger button */
+    }
+  }
