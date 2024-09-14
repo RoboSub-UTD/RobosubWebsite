@@ -1,4 +1,3 @@
-import img from '../images/robosub.png'
 import float from '../images/projects/Float.png'
 import MateROV from '../images/projects/MateROV.png'
 import miniFloat from '../images/projects/minifloat.jpg'
