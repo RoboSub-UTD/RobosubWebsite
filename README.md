@@ -1,1 +1,1 @@
-© All rights reserved by RoboSub UTD ©
+All rights reserved by RoboSub UTD ©
