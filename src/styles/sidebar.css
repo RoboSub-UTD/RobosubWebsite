@@ -37,8 +37,15 @@
     padding: 15px 20px;
     text-align: left;
     font-size: 35px;
-    color: #098ce9;
     cursor: pointer;
+  }
+  .sidebar-item button{
+    color: #098ce9;
+    font-size: 35px;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+    background-color: transparent;
+    border: None;
   }
   
   .sidebar-item:hover {

@@ -53,7 +53,15 @@ section{
     justify-content: center;
     gap: 100px;
     align-items: center;
+    overflow: hidden;
+}
 
+
+
+@media (max-width: 500px) {
+    .TitleCon{
+        flex-direction: column;
+    }
 }
 .titleText{
     margin: 0;

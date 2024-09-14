@@ -5,7 +5,8 @@ import Navbar from './views/navbar';
 import Officers from './views/officers';
 import ProjectsSection from './views/projects';
 import Ending from './views/ending';
-
+import Awards from './views/awards';
+import './index.css'
 function App() {
   return (
     <div className="App">
@@ -15,6 +16,7 @@ function App() {
         <AboutRoboSub/>
         <Officers/>
         <ProjectsSection/>
+        <Awards/>
         <Ending/>
       </ParallaxProvider>
     </div>

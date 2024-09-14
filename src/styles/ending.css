@@ -1,5 +1,5 @@
 .EndingSelction{
-    background:linear-gradient(#15035c,#000000);
+    background:linear-gradient(#0d023a,#000000);
     height: 400px;
     display: flex;
     flex-direction: column;
@@ -29,6 +29,7 @@
 }
 .SocialMedia{
     color: white;
+    font-size: 20px;
     margin: 0;
 }
 .logoGrid{

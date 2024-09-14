@@ -2,7 +2,7 @@ import '../styles/aboutRoboSub.css'
 import aboutPhoto from '../images/GroupPhoto.jpg'
 function AboutRoboSub(){
     return(
-        <div className='about'>
+        <div id="AboutRobo" className='about'>
             <img className="TeamImage" src={aboutPhoto} alt="groupPhoto"/>
             <div className="AboutTextBox">
                 <h1>About RoboSub</h1>
@@ -18,7 +18,6 @@ function AboutRoboSub(){
                     operating autonomously without human intervention. 
                 </p>
             </div>
-
         </div>
     )
 }

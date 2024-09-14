@@ -13,12 +13,12 @@ const ProjectCard = ({ title, description, imgSrc }) => (
 
 const ProjectsSection = () => {
   return (
-    <div className="projects-section">
+    <div id="Projects" className="projects-section">
       <h1>Our Projects</h1>
       <div className="projects-grid">
-        {ProjectsInfo.map((project) => (
+        {ProjectsInfo.map((project,index) => (
           <ProjectCard
-            key={project.id}
+            key={index}
             title={project.title}
             description={project.description}
             imgSrc={project.imgSrc}

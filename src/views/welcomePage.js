@@ -31,13 +31,12 @@ function WelcomePage(){
         <div>
             <section>
                 <div className='TitleCon'>
-                    <Parallax translateX={['-100px', '200px']}>
+                    <Parallax className="parallax-container" translateX={['-100px', '100px']}>
                         <h1 className='titleText'>Dive deep with <span style={{'color' : 'white '}}>RoboSub</span></h1>
                     </Parallax>
                     <Parallax translateY={[-100, 100]} translateX={['200px', '-300px']}>
                         <img src={sub} alt='sub' className='SubPhoto'></img>
                     </Parallax>
-
                 </div>
 
                 <div className='wave' ref={wave1Ref} id='wave1' style={{'--i':1}}></div>
