@@ -28,7 +28,7 @@ function Navbar() {
 
           <div className='right'>
               <ul className='navbar-menu'>
-                  <li className='navbar-item'><button onClick={() => {scrollToSection('AboutRobo'); setIsSidebarOpen('False')}}>About</button></li>
+                  <li className='navbar-item'><button onClick={() => scrollToSection('AboutRobo')}>About</button></li>
                   <li className='navbar-item'><button onClick={() => scrollToSection('Officers')}>Officers</button></li>
                   <li className='navbar-item'><button onClick={() => scrollToSection('Projects')}>Projects</button></li>
                   <li className='navbar-item'><button onClick={() => scrollToSection('Connect')}>Connect</button></li>

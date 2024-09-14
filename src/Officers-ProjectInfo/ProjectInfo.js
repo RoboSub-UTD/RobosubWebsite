@@ -1,24 +1,24 @@
 import img from '../images/robosub.png'
+import float from '../images/projects/Float.png'
+import MateROV from '../images/projects/MateROV.png'
+import miniFloat from '../images/projects/minifloat.jpg'
+
 const ProjectsInfo = [
     {
       title: 'Float Tube',
       description: 'A surface vehicle designed for aquatic exploration and data collection.',
-      imgSrc: img, 
+      imgSrc: float, 
     },
     {
-      title: 'RoboSub Submarine',
-      description: 'An autonomous submarine for underwater exploration and research.',
-      imgSrc: img, 
+      title: 'MateROV Submarine',
+      description: 'MateROV Submarine is an underwater remotely operated vehicle designed for exploring and performing tasks in marine environments.',
+      imgSrc: MateROV, 
     },
+    
     {
-      title: 'RoboSub Mini Submarine',
+      title: 'Mini Float',
       description: 'A smaller version of the RoboSub, designed for tighter underwater spaces.',
-      imgSrc: img, 
-    },
-    {
-      title: 'Robo Boat',
-      description: 'An autonomous boat capable of surface navigation and environmental monitoring.',
-      imgSrc: img, 
+      imgSrc: miniFloat, 
     },
   ];
   

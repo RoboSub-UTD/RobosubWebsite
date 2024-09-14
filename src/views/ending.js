@@ -14,8 +14,8 @@ function Ending(){
                     <p>Connect with us</p>
                     <div className='logoGrid'>
                         <a href='https://www.instagram.com/utdrobosub?igsh=bHkwaWFoYWdrM3Rz&utm_source=qr' target='_blank' rel="noreferrer" ><img alt='insta' src={instaLogo}></img></a>
-                        <a href='https://discord.gg/mpvz7S6vQA' target='_blank'><img alt='discord' src={discordLogo}></img></a>
-                        <a href='https://github.com/RoboSub-UTD' target='_blank'><img alt='github' src={GitHubLogo}></img></a>
+                        <a href='https://discord.gg/mpvz7S6vQA' target='_blank' rel="noreferrer"><img alt='discord' src={discordLogo}></img></a>
+                        <a href='https://github.com/RoboSub-UTD' target='_blank'rel="noreferrer"><img alt='github' src={GitHubLogo}></img></a>
                     </div>
                 </div>
             </div>
