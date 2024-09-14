@@ -1,5 +1,5 @@
 import float from '../images/projects/Float.png'
-import MateROV from '../images/projects/MateROV.png'
+import MateROV from '../images/projects/MateROV.jpg'
 import miniFloat from '../images/projects/minifloat.jpg'
 
 const ProjectsInfo = [

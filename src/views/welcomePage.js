@@ -1,7 +1,7 @@
 import '../styles/WelcomePage.css'
 import React, { useEffect, useRef } from 'react';
 import { Parallax } from 'react-scroll-parallax';
-import sub from '../images/subROV.png'
+import sub from '../images/subROV.jpg'
 function WelcomePage(){
         // Create refs for each wave
         const wave1Ref = useRef(null);

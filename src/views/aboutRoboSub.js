@@ -1,5 +1,5 @@
 import '../styles/aboutRoboSub.css'
-import aboutPhoto from '../images/GroupPhoto.jpg'
+import aboutPhoto from '../images/GroupPhoto.jpeg'
 function AboutRoboSub(){
     return(
         <div id="AboutRobo" className='about'>
