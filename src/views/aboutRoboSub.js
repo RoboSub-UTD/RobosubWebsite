@@ -7,15 +7,12 @@ function AboutRoboSub(){
             <div className="AboutTextBox">
                 <h1>About RoboSub</h1>
                 <p>
-                    RoboSub is an international robotics competition that challenges 
-                    student teams to design, build, and program autonomous underwater 
-                    vehicles (AUVs) capable of completing complex tasks in a simulated 
-                    maritime environment. Hosted annually by the RoboNation organization, 
-                    the competition aims to advance the field of underwater robotics while 
-                    fostering innovation, collaboration, and hands-on learning among students. 
-                    Teams must navigate their AUVs through a series of underwater obstacles and tasks, 
-                    such as passing through gates, manipulating objects, and firing torpedoes, all while 
-                    operating autonomously without human intervention. 
+                RoboSub is an organization at UTD focused on the development of marine robotics. 
+                We seek to tap into the excitement and creativity seen in robotics teams, and in RoboSub, 
+                we work with the added challenge of a marine environment.
+                RoboSub's mission is to bring together individuals 
+                who are interested in robotics and provide them with the opportunity to 
+                practice relevant skills through hands-on, student-driven projects.
                 </p>
             </div>
         </div>
