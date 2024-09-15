@@ -28,7 +28,7 @@ const officersInfo = [
         "id" : 2,
         "img" : Secretary,
         "name" : "Shoaib huq",
-        "title" : "Secratary"
+        "title" : "Secretary"
     },
     {
         "id" : 3,
