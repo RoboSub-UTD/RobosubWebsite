@@ -9,7 +9,7 @@ function Ending(){
         <div id="Connect" className='EndingSelction'>
             <div className='line'></div>
             <div className='contactGrid'>
-                <img alt='logo' src={logo}/>
+                <img className="sublogo" alt='logo' src={logo}/>
                 <div className='SocialMedia'>
                     <p>Connect with us</p>
                     <div className='logoGrid'>

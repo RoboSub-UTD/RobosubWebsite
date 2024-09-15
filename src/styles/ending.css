@@ -20,24 +20,29 @@
     align-items: center;
     padding: 0px 50px;
     align-items: center;
-    height: 120px;
-
 }
 .contactGrid img{
     width: 100%;
     max-width: 80px;
 }
+.sublogo{
+    transform: translateX(-6px);
+}
+
 .SocialMedia{
     color: white;
     font-size: 20px;
     margin: 0;
+    width: 100%;
+    text-align: center;
 }
 .logoGrid{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(20px, 1fr));
+    display: flex;
     align-items: center;
-    gap: 15px;
+    justify-content: center;
+    gap:10px;
 }
+
 .logoGrid img {
     width: 100%; /* Responsive width */
     max-width: 30px;
