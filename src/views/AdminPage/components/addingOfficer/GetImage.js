@@ -1,18 +1,9 @@
-import React, { useState, useRef } from 'react';
+import React, {useRef } from 'react';
 import ReactCrop from 'react-image-crop';
 import 'react-image-crop/dist/ReactCrop.css';
 
-function GetImage({ setIsUploading, setMainImg }) {
-  const [imgSrc, setImgSrc] = useState('');
+function GetImage({ setIsUploading, setMainImg, crop, setCrop, imgSrc,setImgSrc,dimImg,setDimImg }) {
   const imgRef = useRef(null);
-  const [dimImg, setDimImg] = useState(null);
-  const [crop, setCrop] = useState({
-    unit: '%', // Can be 'px' or '%'
-    x: 25,
-    y: 25,
-    width: 50,
-    height: 50
-  });
   const canvasRef = useRef(null);
 
   const handleFileChange = (event) => {
@@ -33,18 +24,29 @@ function GetImage({ setIsUploading, setMainImg }) {
 
   const drawImage = () => {
     const canvas = canvasRef.current;
+    if (!canvas) {
+        console.error("Canvas is not available yet.");
+        return; // Prevent further execution if canvas is not available
+      }
     const ctx = canvas.getContext('2d');
     const scaleX = dimImg.naturalWidth / imgRef.current.width;
     const scaleY = dimImg.naturalHeight / imgRef.current.height;
-
+  
+    // Set canvas size to match the size of the cropped area at full resolution
     const cropWidth = crop.width * scaleX;
     const cropHeight = crop.height * scaleY;
+  
+    // Resize the canvas to match the cropped image size
+    canvas.width = cropWidth;
+    canvas.height = cropHeight;
+  
     const offsetX = crop.x * scaleX;
     const offsetY = crop.y * scaleY;
-
+  
     // Clear canvas before drawing
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
+  
+    // Draw the image cropped and scaled at full resolution
     ctx.drawImage(
       imgRef.current,
       offsetX,
@@ -53,8 +55,8 @@ function GetImage({ setIsUploading, setMainImg }) {
       cropHeight,
       0,
       0,
-      crop.width,
-      crop.height
+      cropWidth, // Draw to full size
+      cropHeight
     );
   };
 
@@ -92,10 +94,24 @@ function GetImage({ setIsUploading, setMainImg }) {
       ></canvas>
       {imgSrc && 
       <>
-        <button className="Add" onClick={() => { drawImage(); getImageFromCanvas(); }}>Add</button>
+        <button className="Add" onClick={() => { 
+            drawImage(); 
+            getImageFromCanvas(); 
+            }}>Add</button>
       </>}
       
-      <button onClick={() => setIsUploading(false)} className='Delete'>Cancel</button>
+      <button onClick={() => {
+        setIsUploading(false)
+        setImgSrc('')
+        setCrop({
+            unit: '%', // Can be 'px' or '%'
+            x: 25,
+            y: 25,
+            width: 50,
+            height: 50
+          })
+        
+        }} className='Delete'>Cancel</button>
     </div>
   );
 }
