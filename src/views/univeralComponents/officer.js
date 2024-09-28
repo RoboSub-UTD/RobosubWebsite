@@ -1,4 +1,4 @@
-import '../styles/officers.css'
+import '../HomePage/styles/officers.css'
 function Officer({Img,Name,Title,id}){
     return(
     <div key={id} className='officer'>

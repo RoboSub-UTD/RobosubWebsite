@@ -63,6 +63,7 @@
   font-size: 23px;
   cursor: pointer;
   transition: color 0.3s ease-in-out;
+  text-decoration: none;
 }
 .navbar-item button{
   color: #fff;

@@ -1,0 +1,44 @@
+/* Style for the circular image */
+.circular-image {
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    margin-top: 10px; /* Adds some space above the image */
+}
+
+/* Style for input fields */
+input[type="number"] {
+    width: 50px; /* Set a fixed width for the input fields */
+    margin-left: 10px; /* Adds space between label and input */
+    margin-right: 20px; /* Adds space between inputs */
+}
+
+/* Style for labels */
+label {
+    font-weight: bold; /* Makes the label text bold */
+}
+
+/* Style for the container of dimension inputs */
+.dimension-inputs {
+    margin-top: 20px; /* Adds space above the dimension inputs */
+}
+
+/* Style for the upload button */
+button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    padding: 10px 15px; /* Add padding */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Display inline block */
+    font-size: 16px; /* Font size */
+    margin-top: 10px; /* Adds space above the button */
+    cursor: pointer; /* Change cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+/* Hover effect for the button */
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}

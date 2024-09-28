@@ -1,6 +1,6 @@
 import React from 'react'
 import '../styles/officers.css'
-import Officer from '../subElements/officer'
+import Officer from '../../univeralComponents/officer'
 import officersInfo from '../Officers-ProjectInfo/OfficersInfo';
 
 function Officers(){

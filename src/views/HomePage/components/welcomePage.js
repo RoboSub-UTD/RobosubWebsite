@@ -28,7 +28,7 @@ function WelcomePage(){
         }, []);
     
     return(
-        <div>
+        <div id="Home">
             <section>
                 <div className='TitleCon'>
                     <Parallax className="parallax-container" translateX={['-100px', '100px']}>
