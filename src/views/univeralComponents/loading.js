@@ -1,6 +1,6 @@
 import React from 'react';
-import '../styles/loading.css'; // Add your styles here
-import loadingGif from '../../universalImages/loading-gif.gif'
+import '../AdminPage/styles/loading.css'; // Add your styles here
+import loadingGif from '../universalImages/loading-gif.gif'
 
 function Loading({ message }) {
   return (
