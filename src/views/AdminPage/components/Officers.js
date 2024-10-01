@@ -10,17 +10,24 @@ import {
     getDocs,
     addDoc,
     deleteDoc,
-    doc
+    doc,
+    updateDoc
 } from 'firebase/firestore'
 import AddPopUp from './addingOfficer/AddPopUp';
 import Loading from '../../univeralComponents/loading';
+import IsDeleting from './isDeleting';
 
 
 
 function OffciersAdmin(){
     const [OfficersArr, setOfficersArr] = useState([]);
+    const [filteredOfficers, setFilteredOfficers] = useState([]);
+    const [searchTerm, setSearchTerm] = useState("");
     const [isAdding, setIsAdding] = useState(false)
     const [isLoading,setIsLoading] = useState("")
+    const [isEditing, setIsEditing] = useState(false); 
+    const [isDeleting,setIsDeleting] = useState(null)
+    const [currentOfficer, setCurrentOfficer] = useState(null); 
     const [name,setName] = useState("")
     const [title, setTitle] = useState("")
     const [mainImage, setMainImg] = useState(null)
@@ -38,6 +45,15 @@ function OffciersAdmin(){
         }
         fetchAllOfficers();
     },[])
+    useEffect(() => {
+        setFilteredOfficers(
+            OfficersArr.filter(officer =>
+                officer.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                officer.title.toLowerCase().includes(searchTerm.toLowerCase())
+            )
+        );
+    }, [searchTerm, OfficersArr]);
+    
     const addOfficer = async () => {
         if (name.trim() && title.trim() && mainImage) {
             setIsLoading("Uploading officer")
@@ -82,17 +98,21 @@ function OffciersAdmin(){
         if (!mainImage) {
             console.log("mainImage is undefined or null");
             alert("No image selected for upload.");
-            return -1; // Return -1 to indicate failure
+            return -1; 
         }
     
         // Convert base64 image to File object if it's in base64 format
         let fileToUpload = mainImage;
-        if (typeof mainImage === 'string') { // Assuming mainImage is a base64 string
-            fileToUpload = base64ToFile(mainImage, name.trim().replaceAll(" ", "") + title.trim().replaceAll(" ","")); // Use a suitable filename
+        if (typeof mainImage === 'string') {
+            fileToUpload = base64ToFile(mainImage, 'tempFile'); // Use a temporary name for conversion
         }
     
-        // Create a storage reference
-        const storageRef = ref(storage, `images/${fileToUpload.name}`);
+        // Generate a unique ID using the current timestamp
+        const uniqueId = new Date().getTime(); // Get the current timestamp in milliseconds
+        const imageFileName = `image_${uniqueId}.jpg`; // Create a unique filename
+    
+        // Create a storage reference using the unique filename
+        const storageRef = ref(storage, `images/officers/${imageFileName}`);
     
         try {
             // Upload the file to Firebase Storage
@@ -109,17 +129,61 @@ function OffciersAdmin(){
         }
     };
 
-    const deleteOfficer = async(id,imagePath) =>{
+    const deleteOfficer = async(Dofficer) =>{
         setIsLoading("deleting Officer")
-        await deleteDoc(doc(db,"officers",id));
+        await deleteDoc(doc(db,"officers",Dofficer.id));
 
-        if (imagePath) {
-            const imageRef = ref(storage, imagePath); // Create a reference to the image
+        if (Dofficer.imageURL) {
+            const imageRef = ref(storage, Dofficer.imageURL); // Create a reference to the image
             await deleteObject(imageRef); // Delete the image
         }
-        setOfficersArr(OfficersArr.filter(officer => officer.id !== id))
+        setOfficersArr(OfficersArr.filter(officer => officer.id !== Dofficer.id))
         setIsLoading("")
+        setIsDeleting(null)
     }
+    const clearFields = () => {
+        setName('');
+        setTitle('');
+        setMainImg(null);
+        setIsAdding(false);
+        setIsEditing(false);
+        setCurrentOfficer(null);
+        setIsLoading("");
+    };
+    const editOfficer = (officer) => {
+        setIsEditing(true);
+        setCurrentOfficer(officer);
+        setName(officer.name);
+        setTitle(officer.title);
+        setMainImg(null); 
+    };
+
+    const updateOfficer = async () => {
+        if (name.trim() && title.trim()) {
+            setIsLoading("Updating officer");
+            let imageURL = currentOfficer.imageURL; // Use the old image if not updated
+            if (mainImage) {
+                if (imageURL) {
+                    const imageRef = ref(storage, imageURL); // Create a reference to the image
+                    await deleteObject(imageRef); // Delete the image
+                }
+                imageURL = await handleUpload();
+                if (imageURL === -1) {
+                    return;
+                }
+            }
+
+            const officerDocRef = doc(db, "officers", currentOfficer.id);
+            await updateDoc(officerDocRef, {
+                name: name,
+                title: title,
+                imageURL: imageURL
+            });
+
+            setOfficersArr(OfficersArr.map(off => (off.id === currentOfficer.id ? { ...off, name: name, title: title, imageURL: imageURL } : off)));
+            clearFields();
+        }
+    };
 
     return(
         <div className='OfficersAdmin'>
@@ -127,9 +191,18 @@ function OffciersAdmin(){
                 <h1 >Officers</h1>
                 <button onClick={() => setIsAdding(true)} className="Add">Add</button>
             </div>
+            <input
+                type="text"
+                placeholder="Search for officers by name or title..."
+                value={searchTerm}
+                onChange={e => setSearchTerm(e.target.value)}
+                className="searchBar"
+            />
+            
+            {isDeleting && <IsDeleting officer={isDeleting} onDeleteConfirm={deleteOfficer} onCancel={setIsDeleting}/>}
+            
             {/* POP UP FOR ADDING OFFICERS */}
-            {isAdding && (
-                <>
+            {isAdding && 
             <AddPopUp name={name} 
                       setName={setName}
                       title={title} 
@@ -139,10 +212,25 @@ function OffciersAdmin(){
                       Img={mainImage}
                       setMainImg={setMainImg}
                       setIsLoading={setIsLoading}
+                      isEdit={false}
                       />
-            </>
-            )
+
+            
            }
+         {isEditing && (
+                <AddPopUp
+                    name={name}
+                    setName={setName}
+                    title={title}
+                    setTitle={setTitle}
+                    addOfficer={updateOfficer} // Use updateOfficer instead of addOfficer
+                    setIsAdding={setIsEditing} // Close editing popup
+                    Img={mainImage}
+                    setMainImg={setMainImg}
+                    setIsLoading={setIsLoading}
+                    isEdit={true}
+                />
+            )}
             
             {/* ALL THE OFFICERS */}
             {isLoading && 
@@ -152,15 +240,15 @@ function OffciersAdmin(){
             }
 
             <div className='Officers'>
-                {OfficersArr.map(off => (
+                {filteredOfficers.map(off => (
                     <div className='IndOfficer'>
                         <Officer key={off.id} Img={off.imageURL} Name={off.name} Title={off.title} id={off.id}/>
+                        <button className='EditButton' onClick={() => editOfficer(
+                            off
+                            )}>Edit</button>
                         <button className="Delete" onClick={()=> 
-                            deleteOfficer(
-                                off.id, 
-                                "images/" + off.name.replaceAll(" ","") + off.title.replaceAll(" ","")     
-                        )}>Delete</button>
-                        
+                            {setIsDeleting(off);
+                        }}>Delete</button> 
                     </div>
                 ))}
             </div>

@@ -35,9 +35,14 @@
   
   .sidebar-item {
     padding: 15px 20px;
-    text-align: left;
+     text-align: left; 
     font-size: 35px;
     cursor: pointer;
+    color: #098ce9;
+  }
+  .link{
+    text-decoration: none;
+    color: #098ce9;
   }
   .sidebar-item button{
     color: #098ce9;

@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import UploadImage from './uploadImage'
-function AddPopUp({name,setName,title,setTitle, addOfficer,setIsAdding,Img,setMainImg}){
+function AddPopUp({name,setName,title,setTitle, addOfficer,setIsAdding,Img,setMainImg,isEdit}){
     const [IsUploading,setIsUpLoading] = useState(false)
     const [crop, setCrop] = useState({
         unit: '%', // Can be 'px' or '%'
@@ -25,7 +25,7 @@ function AddPopUp({name,setName,title,setTitle, addOfficer,setIsAdding,Img,setMa
                                 />)}
             <div className="popup">
                 <div className="popup-inner">
-                    <h1>Adding Officer</h1>
+                    {isEdit ? <h1>Editing Officer</h1> : <h1>Adding Officer</h1>}
                     <div className='addingPopUp'>
                         <div className='OfficersImage'>
                             {Img ? 
@@ -34,7 +34,7 @@ function AddPopUp({name,setName,title,setTitle, addOfficer,setIsAdding,Img,setMa
                             </>:
                             <>
                                 <button onClick={()=>setIsUpLoading(true)} className='Add'>
-                                    Upload Image
+                                    { isEdit ? <>Upload new Image</> : <>Upload Image</>}
                                 </button>
                             </>}
 
@@ -52,7 +52,9 @@ function AddPopUp({name,setName,title,setTitle, addOfficer,setIsAdding,Img,setMa
                             ></input>
                         </div>
                 </div>
-                    <button onClick={() => addOfficer()}className='Add'>Add</button>
+                    <button onClick={() => addOfficer()}className='Add'>
+                        {isEdit ? <>Edit</> : <>Add</>}
+                    </button>
                     <button className="Delete" onClick={() => {
                         setIsAdding(false);
                         setName("");

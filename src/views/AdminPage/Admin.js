@@ -33,7 +33,7 @@ function Admin(){
     };
     
     return(
-        <div>
+        <div className='AdminMain'>
             <Navbar/>
             {isAdmin ? <OffciersAdmin/> : 
             <div className='noAccessesContainer'>
