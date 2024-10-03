@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import '../HomePage/styles/Navbar.css'; // CSS file for styling
+import '../universalStyles/Navbar.css'; // CSS file for styling
 import logo from '../HomePage/images/RobosubLogo.png';
 import SideBar from '../HomePage/components/sidebar';
 import { auth, db } from '../Firebase';
@@ -104,11 +104,21 @@ function Navbar() {
                     <button onClick={() => scrollToSection('AboutRobo')}>About</button>
                   </li>
                   <li className='navbar-item'>
-                    <button onClick={() => scrollToSection('Officers')}>Officers</button>
+                    <button onClick={() => scrollToSection('Officers')}>Officers </button>
                   </li>
-                  <li className='navbar-item'>
-                    <button onClick={() => scrollToSection('Projects')}>Projects</button>
+                  
+                  <li className="navbar-item projects-menu">
+                    <button onClick={() => scrollToSection('Projects')} className="dropdown-button">Projects <span className="arrow">&#9662;</span></button>
+                    <div className='dropdown-container'>
+                      <ul className="dropdown-menu">
+                        <li><Link to="/projects/FloatTube"className='dropDown-item'>Float Tube</Link></li>
+                        <li><Link to="/projects/MateROV" className='dropDown-item'>MateROV</Link></li>
+                        <li><Link to="/projects/MiniFloat" className='dropDown-item'>Mini Float</Link></li>
+                        <li><Link to="/projects/Roboboat" className='dropDown-item'>RoboBoat</Link></li>
+                      </ul>
+                    </div>
                   </li>
+                  
                   {user === null ? (
                     <li className='navbar-item'>
                       <button>

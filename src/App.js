@@ -4,6 +4,7 @@ import './index.css'
 import Admin from './views/AdminPage/Admin';
 import Login from './views/loginPage/Login';
 import Register from './views/loginPage/Register';
+import MateROV from './views/ProjectViews/MateROV'
 function App() {
   return (
     <div className="App">
@@ -13,6 +14,7 @@ function App() {
           <Route path="/Admin" element={<Admin/>}/>
           <Route path="/Login" element={<Login/>}/>
           <Route path="/Register" element={<Register/>}/>
+          <Route path="Projects/MateROV" element={<MateROV/>}/>
         </Routes>
     </Router>
     </div>

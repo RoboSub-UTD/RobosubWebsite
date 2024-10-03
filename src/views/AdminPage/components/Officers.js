@@ -124,7 +124,7 @@ function OffciersAdmin(){
             return url; // Return the download URL for use
         } catch (error) {
             console.error("Error uploading image:", error);
-            alert("There was an error uploading the image.");
+            alert("Error uploading image:", error);
             return -1; // Return -1 if there's an error
         }
     };
