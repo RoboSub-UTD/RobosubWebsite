@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react'
-import projectImg from '../../HomePage/images/RobosubLogo.png'
+import projectImg from '../../universalImages/RobosubLogo.png'
 import comingSoon from '../comingSoon.png'
 import GeneralProject from '../GeneralProject'
 

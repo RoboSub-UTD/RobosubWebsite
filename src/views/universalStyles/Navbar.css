@@ -110,6 +110,7 @@
   transition: all 0.2s ease;
   padding: 10px;
   border-radius: 20px;
+  cursor: pointer;
 }
 .dropdown-menu li:hover{
   background-color: gray;

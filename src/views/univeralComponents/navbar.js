@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import '../universalStyles/Navbar.css'; // CSS file for styling
-import logo from '../HomePage/images/RobosubLogo.png';
-import SideBar from '../HomePage/components/sidebar';
+import logo from '../universalImages/RobosubLogo.png';
+import SideBar from './sidebar';
 import { auth, db } from '../Firebase';
 import { signOut } from 'firebase/auth';
 import { doc, getDoc } from 'firebase/firestore';
@@ -12,10 +12,11 @@ import { onAuthStateChanged } from 'firebase/auth';
 function Navbar() {
   const [user, setUser] = useState(null);
   const [isAdmin, setIsAdmin] = useState(false);
-  const [isLoading, setIsLoading] = useState(true); // Track loading state
-
+  
+  const goTo = (URL) => {
+    window.location.href = URL
+  }
   useEffect(() => {
-    // Listen for authentication state changes
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
         setUser(currentUser);
@@ -24,24 +25,17 @@ function Navbar() {
         setUser(null);
         setIsAdmin(false);
       }
-      setIsLoading(false); // Stop loading once we get the auth state
     });
-
-    // Clean up the listener on component unmount
     return () => unsubscribe();
   }, []);
 
   const checkAdminStatus = async (uid) => {
     try {
-      // Get the document for the current user's uid in the "admins" collection
       const adminDocRef = doc(db, 'admins', uid);
       const adminDoc = await getDoc(adminDocRef);
-
       if (adminDoc.exists()) {
-        // If the document exists, the user is an admin
         setIsAdmin(true);
       } else {
-        // If the document does not exist, the user is not an admin
         setIsAdmin(false);
       }
     } catch (error) {
@@ -77,11 +71,6 @@ function Navbar() {
     }
   }
 
-  // Show loading indicator while checking authentication state
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
-
   return (
     <div>
       <nav className='navbar'>
@@ -114,10 +103,10 @@ function Navbar() {
                 <button onClick={() => scrollToSection('Projects')} className="dropdown-button"><Link to='/' className='navbar-item'>Projects</Link> <span className="arrow">&#9662;</span></button>
                 <div className='dropdown-container'>
                   <ul className="dropdown-menu">
-                    <li><Link to="/projects/FloatTube"className='dropDown-item'>Float Tube</Link></li>
-                    <li><Link to="/projects/MateROV" className='dropDown-item'>MateROV</Link></li>
-                    <li><Link to="/projects/MiniFloat" className='dropDown-item'>Mini Float</Link></li>
-                    <li><Link to="/projects/Roboboat" className='dropDown-item'>RoboBoat</Link></li>
+                    <li onClick={()=>goTo("/projects/FloatTube")} >Float Tube</li>
+                    <li onClick={()=>goTo("/projects/MateROV")}>MateROV</li>
+                    <li onClick={()=>goTo("/projects/MiniFloat")}>Mini Float</li>
+                    <li onClick={()=>goTo("/projects/Roboboat")}>RoboBoat</li>
                   </ul>
                 </div>
               </li>

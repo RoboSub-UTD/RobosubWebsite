@@ -28,6 +28,7 @@
     transition: transform 0.3s;
     width: 100%;
     max-width: 300px; 
+    cursor: pointer;
   }
   
   .project-card:hover {

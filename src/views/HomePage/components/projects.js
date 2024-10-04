@@ -2,9 +2,11 @@ import React from 'react';
 import '../styles/Projects.css'
 import ProjectsInfo from '../Officers-ProjectInfo/ProjectInfo';
 
-
-const ProjectCard = ({ title, description, imgSrc }) => (
-  <div className="project-card">
+const goToPage = (url) => {
+  window.location.href = url
+}
+const ProjectCard = ({ title, description, imgSrc,URL }) => (
+  <div onClick={()=>goToPage(URL)} className="project-card">
     <img src={imgSrc} alt={title} className="project-image" />
     <h3>{title}</h3>
     <p>{description}</p>
@@ -12,6 +14,7 @@ const ProjectCard = ({ title, description, imgSrc }) => (
 );
 
 const ProjectsSection = () => {
+
   return (
     <div id="Projects" className="projects-section">
       <h1>Our Projects</h1>
@@ -22,6 +25,7 @@ const ProjectsSection = () => {
             title={project.title}
             description={project.description}
             imgSrc={project.imgSrc}
+            URL={project.URL}
           />
         ))}
       </div>

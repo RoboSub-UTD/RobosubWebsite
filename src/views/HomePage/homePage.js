@@ -5,7 +5,7 @@ import AboutRoboSub from './components/aboutRoboSub';
 import Navbar from '../univeralComponents/navbar';
 import Officers from './components/officers';
 import ProjectsSection from './components/projects';
-import Ending from './components/ending';
+import Ending from '../univeralComponents/ending';
 import Awards from './components/awards';
 
 

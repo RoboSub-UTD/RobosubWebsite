@@ -241,8 +241,8 @@ function OffciersAdmin(){
 
             <div className='Officers'>
                 {filteredOfficers.map(off => (
-                    <div className='IndOfficer'>
-                        <Officer key={off.id} Img={off.imageURL} Name={off.name} Title={off.title} id={off.id}/>
+                    <div  key={off.id} className='IndOfficer'>
+                        <Officer  Img={off.imageURL} Name={off.name} Title={off.title} id={off.id}/>
                         <button className='EditButton' onClick={() => editOfficer(
                             off
                             )}>Edit</button>
