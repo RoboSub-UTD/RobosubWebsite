@@ -5,6 +5,7 @@ import Admin from './views/AdminPage/Admin';
 import Login from './views/loginPage/Login';
 import Register from './views/loginPage/Register';
 import MateROV from './views/ProjectViews/MateROV'
+import FloatTube from './views/ProjectViews/FloatTube';
 function App() {
   return (
     <div className="App">
@@ -15,6 +16,7 @@ function App() {
           <Route path="/Login" element={<Login/>}/>
           <Route path="/Register" element={<Register/>}/>
           <Route path="Projects/MateROV" element={<MateROV/>}/>
+          <Route path="Projects/FloatTube" element={<FloatTube/>}/>
         </Routes>
     </Router>
     </div>

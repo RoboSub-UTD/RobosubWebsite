@@ -4,9 +4,9 @@ import logo from '../images/RobosubLogo.png'
 import instaLogo from '../images/icons/InstagramIcon.png'
 import discordLogo from '../images/icons/DiscordIcon.png'
 import GitHubLogo from '../images/icons/GithubIcon.png'
-function Ending(){
+function Ending({start,end}){
     return(
-        <div id="Connect" className='EndingSelction'>
+        <div id="Connect" className='EndingSelction' style={{background:`linear-gradient(${start},${end})`}}>
             <div className='line'></div>
             <div className='contactGrid'>
                 <img className="sublogo" alt='logo' src={logo}/>

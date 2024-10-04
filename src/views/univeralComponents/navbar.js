@@ -98,6 +98,7 @@ function Navbar() {
                   <Link className='navbar-item' to="/">Home</Link>
                 </button>
               </li>
+              
               {isHomePage && (
                 <>
                   <li className='navbar-item'>
@@ -106,20 +107,31 @@ function Navbar() {
                   <li className='navbar-item'>
                     <button onClick={() => scrollToSection('Officers')}>Officers </button>
                   </li>
-                  
-                  <li className="navbar-item projects-menu">
-                    <button onClick={() => scrollToSection('Projects')} className="dropdown-button">Projects <span className="arrow">&#9662;</span></button>
-                    <div className='dropdown-container'>
-                      <ul className="dropdown-menu">
-                        <li><Link to="/projects/FloatTube"className='dropDown-item'>Float Tube</Link></li>
-                        <li><Link to="/projects/MateROV" className='dropDown-item'>MateROV</Link></li>
-                        <li><Link to="/projects/MiniFloat" className='dropDown-item'>Mini Float</Link></li>
-                        <li><Link to="/projects/Roboboat" className='dropDown-item'>RoboBoat</Link></li>
-                      </ul>
-                    </div>
-                  </li>
-                  
-                  {user === null ? (
+                </>
+              )}
+
+              <li className="navbar-item projects-menu">
+                <button onClick={() => scrollToSection('Projects')} className="dropdown-button"><Link to='/' className='navbar-item'>Projects</Link> <span className="arrow">&#9662;</span></button>
+                <div className='dropdown-container'>
+                  <ul className="dropdown-menu">
+                    <li><Link to="/projects/FloatTube"className='dropDown-item'>Float Tube</Link></li>
+                    <li><Link to="/projects/MateROV" className='dropDown-item'>MateROV</Link></li>
+                    <li><Link to="/projects/MiniFloat" className='dropDown-item'>Mini Float</Link></li>
+                    <li><Link to="/projects/Roboboat" className='dropDown-item'>RoboBoat</Link></li>
+                  </ul>
+                </div>
+              </li>
+
+              {isAdmin && (
+                <li className='navbar-item'>
+                  <button>
+                    <Link className='navbar-item' to="/Admin">Admin</Link>
+                  </button>
+                </li>
+              )}
+              {/* <button onClick={() => { console.log(auth.currentUser); }}>get user</button> */}
+
+              {user === null ? (
                     <li className='navbar-item'>
                       <button>
                         <Link className='navbar-item' to="/Login">Login</Link>
@@ -130,16 +142,6 @@ function Navbar() {
                       <button onClick={logOut}>Logout</button>
                     </li>
                   )}
-                </>
-              )}
-              {isAdmin && (
-                <li className='navbar-item'>
-                  <button>
-                    <Link className='navbar-item' to="/Admin">Admin</Link>
-                  </button>
-                </li>
-              )}
-              {/* <button onClick={() => { console.log(auth.currentUser); }}>get user</button> */}
             </ul>
             <button className="hamburger" onClick={toggleSidebar}>
               ☰

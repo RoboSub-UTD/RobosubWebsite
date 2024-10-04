@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import WelcomePage from './components/welcomePage';
 import AboutRoboSub from './components/aboutRoboSub';
@@ -9,6 +10,9 @@ import Awards from './components/awards';
 
 
 function HomePage(){
+    useEffect(() => {
+        window.scrollTo(0, 0);  // Scrolls to the top of the page
+      }, []);
     return(
         <div>
             <ParallaxProvider>
@@ -18,7 +22,7 @@ function HomePage(){
             <Officers/>
             <ProjectsSection/>
             <Awards/>
-            <Ending/>
+            <Ending start={"#0d023a"} end={"#000000"}/>
             </ParallaxProvider>
         </div>
     )
