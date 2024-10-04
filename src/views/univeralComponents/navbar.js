@@ -110,6 +110,11 @@ function Navbar() {
                   </ul>
                 </div>
               </li>
+              {isHomePage && (
+                  <li className='navbar-item'>
+                    <button onClick={() => scrollToSection('Sponsors')}>Sponsors</button>
+                  </li>
+              )}
 
               {isAdmin && (
                 <li className='navbar-item'>

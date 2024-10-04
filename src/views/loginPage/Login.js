@@ -6,6 +6,9 @@ import { auth } from '../Firebase';
 import { useNavigate } from 'react-router-dom';
 import './styles/Login.css';
 
+import img1 from '../HomePage/images/subROV.png'
+import img2 from '../HomePage/images/projects/Float.png'
+
 function Login(){
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -24,7 +27,10 @@ function Login(){
     };
     
     return(
-        <div>
+        <div className='authContainer'>
+        <img className="rovLoginScreen" alt="ROV" src={img1}></img>
+        <img className='floatLoginScreen' alt="Tube" src={img2}></img>
+
         <Navbar/>
         <div className="login-container">
             <div className="login-box">

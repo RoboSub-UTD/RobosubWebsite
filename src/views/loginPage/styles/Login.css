@@ -4,7 +4,8 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: black;
+    background:linear-gradient(#0d023a,#000000);
+    overflow: hidden;
   }
   
   .login-box {
@@ -19,9 +20,10 @@
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     width: 350px;
     text-align: center;
+    z-index: 1000;
   }
   .RegisterLink{
-    color: blue;
+    color: #1B1149;
     text-decoration: none;
   }
   
@@ -51,7 +53,7 @@
     background-color: #1B1149; /* Dark Blue Button */
     color: #ffffff;
     border: none;
-    border-radius: 5px;
+    border-radius: 30px;
     font-size: 1rem;
     cursor: pointer;
   }
@@ -64,4 +66,66 @@
     color: #e74c3c; /* Red for errors */
     margin-bottom: 1rem;
   }
-  
+  .authContainer{
+    position: relative;
+  }
+  .rovLoginScreen{
+    max-height: 300px;
+    position: absolute;
+    right: 15%;
+    top: 50%;
+    transform: translateY(-50%) rotate(-20deg);
+    animation: LoginUpDownRight 4s infinite;
+  }
+  .floatLoginScreen{
+    max-height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    border-radius: 100px;
+    animation: LoginUpDownLeft 4s infinite;
+  }
+  @media (max-width: 1312px) {
+    .rovLoginScreen{
+      max-height: 300px;
+      right: 20%;
+      top: 20%;
+    }
+    .floatLoginScreen{
+      max-height: 200px;
+      top: 85%;
+      left: 50%;
+      transform: none;
+    }
+  }
+  .grass{
+    position: absolute;
+    bottom: 0px;
+    height: 40%;
+    left: var(--left-offset,0);
+  }
+  .sand{
+    background-color: rgb(84, 76, 44);
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 0px;
+  }
+
+  @keyframes LoginUpDownLeft{
+    0%,100%{
+      transform: translateY(-50%) rotate(20deg);
+    }
+    50%{
+      transform: translateY(-53%) rotate(20deg);
+    }
+  }
+
+  @keyframes LoginUpDownRight{
+    0%,100%{
+      transform: translateY(-50%) rotate(-20deg);
+    }
+    50%{
+      transform: translateY(-53%) rotate(-20deg);
+    }
+  }

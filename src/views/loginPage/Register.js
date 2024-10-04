@@ -5,12 +5,12 @@ import { Link,useNavigate } from 'react-router-dom';
 import { auth, db } from '../Firebase';
 import { doc, setDoc } from 'firebase/firestore';
 import './styles/Login.css';
+import img1 from '../HomePage/images/subROV.png'
+import img2 from '../HomePage/images/projects/Float.png'
 
 function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [firstName,setFirstName] = useState('')
-  const [LastName, setLastName] = useState('')
   const [error, setError] = useState('');
 
   const navigate = useNavigate();
@@ -23,8 +23,6 @@ function Register() {
     
         // Step 2: Save user info in Firestore with their uid
         await setDoc(doc(db, 'users', user.uid), {
-          firstName: firstName,
-          lastName: LastName,
           email: email,
           uid: user.uid // Optionally store the email in Firestore
         });
@@ -40,7 +38,9 @@ function Register() {
   };
 
   return (
-    <div>
+    <div className='authContainer'>
+      <img className="rovLoginScreen" alt="ROV" src={img1}></img>
+      <img className='floatLoginScreen' alt="Tube" src={img2}></img>
       <Navbar />
       <div className="login-container">
         <div className="login-box">
@@ -58,18 +58,6 @@ function Register() {
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-            />
-            <input
-              type="text"
-              placeholder="First Name"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-            />
-            <input
-              type="text"
-              placeholder="Last Name"
-              value={LastName}
-              onChange={(e) => setLastName(e.target.value)}
             />
             <button type="submit">Register</button>
           </form>

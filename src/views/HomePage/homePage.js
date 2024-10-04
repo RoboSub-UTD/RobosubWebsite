@@ -7,6 +7,7 @@ import Officers from './components/officers';
 import ProjectsSection from './components/projects';
 import Ending from '../univeralComponents/ending';
 import Awards from './components/awards';
+import Sponsors from './components/Sponsors';
 
 
 function HomePage(){
@@ -22,7 +23,8 @@ function HomePage(){
             <Officers/>
             <ProjectsSection/>
             <Awards/>
-            <Ending start={"#0d023a"} end={"#000000"}/>
+            <Sponsors/>
+            <Ending start={"#080124"} end={"#000000"}/>
             </ParallaxProvider>
         </div>
     )
