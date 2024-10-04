@@ -61,7 +61,10 @@
     z-index: 1000px;
 
 }
-
+.AboutIndProject{
+    flex-grow: 1;
+    max-width: 700px;
+}
 .AboutIndProject h1{
     color: white;
     margin: 0; 
@@ -76,19 +79,20 @@
     padding: 0px 20px;
     color: white;
     min-width: 350px;
-    max-width: 500px;
+    
 }
 .carImage{
     max-width: 600px;
     user-select: none;
+    border-radius: 30px;
 }
 .Carousel{
-    max-width: 700px;
+    max-width: 800px;
     width: 100%;
-    
+    flex-grow: 3;
 }
 
-@media (max-width: 1748px) {
+@media (max-width: 1348px) {
     .projectAboutSection{
         flex-direction: column;
         align-items: center;
@@ -96,5 +100,14 @@
     }
     .AboutIndProject{
         min-width: none;
+    }
+}
+@media (max-width: 800px) {
+    .projectImg{
+        max-width: 200px;
+        max-height: 400px;
+    }
+    .projectTitle{
+        font-size: 30px;
     }
 }

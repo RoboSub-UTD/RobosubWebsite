@@ -7,7 +7,6 @@ import { Parallax,ParallaxProvider } from 'react-scroll-parallax'
 
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 function GeneralProject({ProjectName, ProjectImage, AboutText, ImgArr}){
-
     return(
         <div>
             <ParallaxProvider>
@@ -17,7 +16,7 @@ function GeneralProject({ProjectName, ProjectImage, AboutText, ImgArr}){
                     <Parallax className="parallax-container" translateX={['100px', '-100px']}>
                         <h1 className='projectTitle'>{ProjectName}</h1>
                     </Parallax>
-                    <Parallax translateX={[-100, 100]}>
+                    <Parallax translateX={['-200px', '200px']}>
                         <img className="projectImg" src={ProjectImage} alt="project-image"/>
                     </Parallax>
                     <span className="Projectarrow">&#9662;</span>
