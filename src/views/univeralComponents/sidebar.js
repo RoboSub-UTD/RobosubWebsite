@@ -25,7 +25,7 @@ function SideBar({ isSidebarOpen, toggleSidebar, scrollToSection, user, logOut }
         <ul className='sidebar-menu'>
           <li className='sidebar-item'>
             <button onClick={() => { scrollToSection('Home'); toggleSidebar(); }}>
-              <Link className='link' to='/'>Home</Link>
+              <a className='link' href='#/'>Home</a>
             </button>
           </li>
           <li className='sidebar-item'>
@@ -44,10 +44,10 @@ function SideBar({ isSidebarOpen, toggleSidebar, scrollToSection, user, logOut }
             </button>
             {isDropdownOpen && (
               <ul className="sideBar-dropdown-menu">
-                <li onClick={()=>goTo("/projects/FloatTube")}><button>Float Tube</button></li>
-                <li onClick={()=>goTo("/projects/MateROV")}><button>MateROV</button></li>
-                <li onClick={()=>goTo("/projects/MiniFloat")}><button>Mini Float</button></li>
-                <li onClick={() => goTo("/projects/MiniFloat")}><button>MiniFloat</button></li>
+                <li onClick={()=>goTo("#/projects/FloatTube")}><button>Float Tube</button></li>
+                <li onClick={()=>goTo("#/projects/MateROV")}><button>MateROV</button></li>
+                <li onClick={()=>goTo("#/projects/MiniFloat")}><button>Mini Float</button></li>
+                <li onClick={() => goTo("#/projects/MiniFloat")}><button>MiniFloat</button></li>
               </ul>
             )}
           </li>
@@ -55,7 +55,7 @@ function SideBar({ isSidebarOpen, toggleSidebar, scrollToSection, user, logOut }
           {user === null ? (
             <li className='sidebar-item'>
               <button>
-                <Link className='link' to="/Login">Login</Link>
+                <Link className='link' to="#/Login">Login</Link>
               </button>
             </li>
           ) : (

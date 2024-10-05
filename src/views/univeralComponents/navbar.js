@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import '../universalStyles/Navbar.css'; // CSS file for styling
 import logo from '../universalImages/RobosubLogo.png';
 import SideBar from './sidebar';
@@ -84,7 +84,7 @@ function Navbar() {
             <ul className='navbar-menu'>
               <li className='navbar-item'>
                 <button onClick={() => scrollToSection('Home')}>
-                  <Link className='navbar-item' to="/">Home</Link>
+                  <a className='navbar-item' href="#/">Home</a>
                 </button>
               </li>
               
@@ -100,13 +100,13 @@ function Navbar() {
               )}
 
               <li className="navbar-item projects-menu">
-                <button onClick={() => scrollToSection('Projects')} className="dropdown-button"><Link to='/' className='navbar-item'>Projects</Link> <span className="arrow">&#9662;</span></button>
+                <button onClick={() => scrollToSection('Projects')} className="dropdown-button"><a href='#/' className='navbar-item'>Projects</a> <span className="arrow">&#9662;</span></button>
                 <div className='dropdown-container'>
                   <ul className="dropdown-menu">
-                    <li onClick={()=>goTo("/projects/FloatTube")} >Float Tube</li>
-                    <li onClick={()=>goTo("/projects/MateROV")}>MateROV</li>
-                    <li onClick={()=>goTo("/projects/MiniFloat")}>Mini Float</li>
-                    <li onClick={()=>goTo("/projects/Roboboat")}>RoboBoat</li>
+                    <li onClick={()=>goTo("#/projects/MateROV")}>MateROV</li>
+                    <li onClick={()=>goTo("#/projects/FloatTube")} >Float Tube</li>
+                    <li onClick={()=>goTo("#/projects/MiniFloat")}>Mini Float</li>
+                    <li onClick={()=>goTo("#/projects/Roboboat")}>RoboBoat</li>
                   </ul>
                 </div>
               </li>
@@ -119,7 +119,7 @@ function Navbar() {
               {isAdmin && (
                 <li className='navbar-item'>
                   <button>
-                    <Link className='navbar-item' to="/Admin">Admin</Link>
+                    <a className='navbar-item' href="#/Admin">Admin</a>
                   </button>
                 </li>
               )}
@@ -128,7 +128,7 @@ function Navbar() {
               {user === null ? (
                     <li className='navbar-item'>
                       <button>
-                        <Link className='navbar-item' to="/Login">Login</Link>
+                        <a className='navbar-item' href="#/Login">Login</a>
                       </button>
                     </li>
                   ) : (
