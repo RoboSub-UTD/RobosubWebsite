@@ -3,6 +3,7 @@ import React, {useEffect, useState} from 'react'
 import { doc,getDoc } from 'firebase/firestore'
 import Navbar from '../univeralComponents/navbar'
 import OffciersAdmin from './components/Officers'
+import ChangeAdmins from './components/ChangeAdmins'
 import {auth,db} from '../Firebase'
 import { onAuthStateChanged } from 'firebase/auth'
 import './styles/Admin.css'
@@ -44,8 +45,9 @@ function Admin(){
         <div className='AdminMain'>
             <Navbar/>
             {isAdmin && !isLoading ? 
-            <div>
+            <div className='adminMain'>
                 <OffciersAdmin/> 
+                <ChangeAdmins/>
             </div>
             
             

@@ -63,7 +63,7 @@ function UploadImage({ setIsUploading,setMainImg, crop,setCrop,imgSrc, setImgSrc
 
   const getImageFromCanvas = () => {
     const canvas = canvasRef.current;
-    setMainImg(canvas.toDataURL('image/png')); // Pass the cropped image to the parent component
+    setMainImg(canvas.toDataURL('image/png',0.7)); // Pass the cropped image to the parent component
     setIsUploading(false);
   };
   return (

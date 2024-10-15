@@ -8,3 +8,12 @@
 .noAccesses{
     color: red;
 }
+
+.adminMain{
+    display: flex;
+    margin-top:  50px;
+    padding: 30px;
+    gap: 20px; 
+    max-height: 80vh;
+    position: relative;
+}

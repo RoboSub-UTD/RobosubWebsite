@@ -57,6 +57,21 @@ function OffciersAdmin(){
     const addOfficer = async () => {
         if (name.trim() && title.trim() && mainImage) {
             setIsLoading("Uploading officer")
+            ///////////////////////////////UPLOAD TIME TEST/////////////////////////////////////////
+            // let totalTime = 0
+            // for(let i = 0; i < 10; i++){
+            //     let startTime = performance.now()
+            //     const imageURL = await handleUpload();
+            //     let stopTime = performance.now()
+            //     const uploadTime = stopTime - startTime
+            //     totalTime += uploadTime
+            //     console.log(`Upload ${i + 1} took ${uploadTime.toFixed(2)} ms`);
+            //     const imageRef = ref(storage, imageURL); // Create a reference to the image
+            //     await deleteObject(imageRef); // Delete the image
+            // }
+            // console.log(`Total upload time for 10 uploads: ${totalTime.toFixed(2)} ms`);
+            // console.log(`Average upload time: ${(totalTime / 10).toFixed(2)} ms`);
+            ///////////////////////////////UPLOAD TIME TEST////////////////////////////////////////
             const imageURL = await handleUpload();
             // If imageURL is not returned or there's an error during upload
             if (imageURL === -1) {
@@ -74,11 +89,7 @@ function OffciersAdmin(){
             setOfficersArr([...OfficersArr, { id: docRef.id, name: name, title: title, imageURL: imageURL }]);
     
             // Clear the input fields
-            setName('');
-            setTitle('');
-            setMainImg(null); // Clear the image field
-            setIsAdding(false);
-            setIsLoading("");
+            clearFields();
         }
     };
     const base64ToFile = (base64String, fileName) => {
@@ -120,7 +131,6 @@ function OffciersAdmin(){
     
             // Get the image download URL
             const url = await getDownloadURL(uploadTaskSnapshot.ref);
-            console.log("Uploaded image URL:", url);
             return url; // Return the download URL for use
         } catch (error) {
             console.error("Error uploading image:", error);
