@@ -1,47 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 // import { Link } from 'react-router-dom';
 import '../universalStyles/Navbar.css'; // CSS file for styling
 import logo from '../universalImages/RobosubLogo.png';
 import SideBar from './sidebar';
-import { auth, db } from '../Firebase';
-import { signOut } from 'firebase/auth';
-import { doc, getDoc } from 'firebase/firestore';
-import { onAuthStateChanged } from 'firebase/auth';
 
 function Navbar() {
-  const [user, setUser] = useState(null);
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [user] = useState(null);
 
   const goTo = (URL) => {
     window.location.href = URL
   }
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      if (currentUser) {
-        setUser(currentUser);
-        checkAdminStatus(currentUser.uid);
-      } else {
-        setUser(null);
-        setIsAdmin(false);
-      }
-    });
-    return () => unsubscribe();
-  }, []);
-
-  const checkAdminStatus = async (uid) => {
-    try {
-      const adminDocRef = doc(db, 'admins', uid);
-      const adminDoc = await getDoc(adminDocRef);
-      if (adminDoc.exists()) {
-        setIsAdmin(true);
-      } else {
-        setIsAdmin(false);
-      }
-    } catch (error) {
-      console.error('Error checking admin status:', error);
-    }
-  };
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -58,18 +27,6 @@ function Navbar() {
   }
 
   const isHomePage = useLocation().pathname === '/';
-
-  async function logOut() {
-    if (user) {
-      try {
-        await signOut(auth);
-        setUser(null);
-        setIsAdmin(false);
-      } catch (err) {
-        console.log('There was an error: ' + err);
-      }
-    }
-  }
 
   return (
       <div>
@@ -116,27 +73,6 @@ function Navbar() {
                       <button onClick={() => scrollToSection('Sponsors')}>Sponsors</button>
                     </li>
                 )}
-
-                {isAdmin && (
-                    <li className='navbar-item'>
-                      <button>
-                        <a className='navbar-item' href="#/Admin">Admin</a>
-                      </button>
-                    </li>
-                )}
-                {/* <button onClick={() => { console.log(auth.currentUser); }}>get user</button> */}
-
-                {user === null ? (
-                    <li className='navbar-item'>
-                      <button>
-                        <a className='navbar-item' href="#/Login">Login</a>
-                      </button>
-                    </li>
-                ) : (
-                    <li className='navbar-item'>
-                      <button onClick={logOut}>Logout</button>
-                    </li>
-                )}
               </ul>
               <button className="hamburger" onClick={toggleSidebar}>
                 ☰
@@ -144,7 +80,7 @@ function Navbar() {
             </div>
           </div>
         </nav>
-        <SideBar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} scrollToSection={scrollToSection} user={user} logOut={logOut}/>
+        <SideBar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} scrollToSection={scrollToSection} user={user} />
       </div>
   );
 }
