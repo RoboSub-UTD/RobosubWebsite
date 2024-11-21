@@ -35,7 +35,7 @@
   margin-right: 10px;
 }
 
-.Title {
+.title {
   color: #fff;
   font-size: 24px;
   font-weight: bold;
@@ -91,7 +91,7 @@
 .arrow {
   display: inline-block;
   transition: all 0.3s ease-in-out;
-  margin: 0px;
+  margin: 0;
 }
 .projects-menu:hover {
   .dropdown-container {
@@ -102,7 +102,7 @@
   }
 }
 .dropdown-menu {
-  padding: 0px;
+  padding: 0;
 }
 .dropdown-menu li {
   list-style: none;

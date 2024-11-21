@@ -1,0 +1,46 @@
+.award-section {
+  background: linear-gradient(#15035c, #0d023a);
+  margin: 0;
+  position: relative;
+}
+
+.award-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(500px, 500px)
+  ); /* Adjust column size */
+  gap: 20px;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.award-section h1 {
+  margin-bottom: 30px;
+  color: rgb(208, 207, 207);
+  text-align: left;
+  font-size: 50px;
+}
+
+.award-grid img {
+  width: 100%;
+  max-width: 600px;
+}
+
+@media (max-width: 560px) {
+  .award-grid {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 400px));
+  }
+  .award-grid img {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 450px) {
+  .award-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+  }
+  .award-grid img {
+    max-width: 300px;
+  }
+}

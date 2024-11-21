@@ -7,6 +7,7 @@
   align-items: center;
   padding: 100px 50px;
 }
+
 .officers h1 {
   text-align: left;
   color: rgb(208, 207, 207);
@@ -14,12 +15,14 @@
   align-self: flex-start;
   margin: 0 0 50px;
 }
-.officersBox {
+
+.officers-box {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
 }
+
 .officer {
   width: 350px;
   height: 100px;
@@ -29,6 +32,7 @@
   border-radius: 10px;
   color: rgb(208, 207, 207);
 }
+
 .officer h2 {
   margin: 15px 0 0;
 }
@@ -37,7 +41,7 @@
   margin-top: 5px;
 }
 
-.officerImage {
+.officer-image {
   width: 100%;
   max-width: 100px;
   border-radius: 50px;

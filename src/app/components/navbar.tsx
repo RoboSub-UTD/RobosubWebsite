@@ -4,8 +4,6 @@ import '../styles/navbar.css';
 import SideBar from './sidebar';
 
 function Navbar() {
-  const [user] = useState(null);
-
   const goTo = (URL: string) => {
     window.location.href = URL;
   };
@@ -32,7 +30,6 @@ function Navbar() {
         <div className="navbar-content">
           <div
             className="left"
-            unselectable={'on'}
             onClick={() => {
               if (isHomePage) {
                 scrollToSection('Home');
@@ -43,10 +40,10 @@ function Navbar() {
           >
             <img
               className="logo-img"
-              src="/imgs/RobosubLogo.png"
+              src="/imgs/logos/RobosubLogo.png"
               alt="RoboSub Logo"
             />
-            <h1 className="Title">RoboSub UTD</h1>
+            <h1 className="title">RoboSub UTD</h1>
           </div>
 
           <div className="right">
@@ -83,9 +80,7 @@ function Navbar() {
                     <li onClick={() => goTo('/projects/minifloat')}>
                       Mini Float
                     </li>
-                    <li onClick={() => goTo('/projects/galaxsea`')}>
-                      galaxsea
-                    </li>
+                    <li onClick={() => goTo('/projects/galaxsea')}>galaxsea</li>
                   </ul>
                 </div>
               </li>
@@ -107,8 +102,6 @@ function Navbar() {
         isSidebarOpen={isSidebarOpen}
         toggleSidebar={toggleSidebar}
         scrollToSection={scrollToSection}
-        user={true}
-        logOut={false}
       />
     </div>
   );

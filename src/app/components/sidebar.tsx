@@ -1,18 +1,14 @@
 import React, { useState } from 'react';
 import '../styles/sidebar.css';
 
-export default function SideBar({
+function SideBar({
   isSidebarOpen,
   toggleSidebar,
   scrollToSection,
-  user,
-  logOut,
 }: {
   isSidebarOpen: boolean;
   toggleSidebar: any;
   scrollToSection: any;
-  user: boolean;
-  logOut: any;
 }) {
   // State to manage dropdown open/close
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -29,7 +25,11 @@ export default function SideBar({
     <div>
       <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
         <div className="top">
-          <img className="sidebar-logo" alt="logo" src="/robosub.png" />
+          <img
+            className="sidebar-logo"
+            alt="logo"
+            src="/imgs/logos/robosub.png"
+          />
           <button className="close-btn" onClick={toggleSidebar}>
             ×
           </button>
@@ -72,7 +72,7 @@ export default function SideBar({
             <button>
               Projects
               <span
-                className="arrowSideBar"
+                className="arrow-sidebar"
                 style={{
                   display: 'inline-block',
                   transform: isDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)',
@@ -82,7 +82,7 @@ export default function SideBar({
               </span>
             </button>
             {isDropdownOpen && (
-              <ul className="sideBar-dropdown-menu">
+              <ul className="sidebar-dropdown-menu">
                 <li onClick={() => goTo('/projects/FloatTube')}>
                   <button>Float Tube</button>
                 </li>
@@ -98,27 +98,10 @@ export default function SideBar({
               </ul>
             )}
           </li>
-
-          {user === null ? (
-            <li className="sidebar-item">
-              <button>
-                <a className="link" href={'/login'}></a>
-              </button>
-            </li>
-          ) : (
-            <li className="sidebar-item">
-              <button
-                onClick={() => {
-                  logOut();
-                  toggleSidebar();
-                }}
-              >
-                Logout
-              </button>
-            </li>
-          )}
         </ul>
       </div>
     </div>
   );
 }
+
+export default SideBar;

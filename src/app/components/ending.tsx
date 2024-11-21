@@ -1,17 +1,21 @@
 import React from 'react';
 import '../styles/ending.css';
 
-export default function Ending({ start, end }: { start: string; end: string }) {
+function Ending({ start, end }: { start: string; end: string }) {
   return (
     <div
       id="Connect"
-      className="EndingSelction"
+      className="ending-section"
       style={{ background: `linear-gradient(${start},${end})` }}
     >
       <div className="line"></div>
-      <div className="contactGrid">
-        <img className="sublogo" alt="logo" src="/imgs/RobosubLogo.png" />
-        <div className="SocialMedia">
+      <div className="contact-grid">
+        <img
+          className="sub-logo"
+          alt="logo"
+          src="/imgs/logos/RobosubLogo.png"
+        />
+        <div className="social-media">
           <p>Connect with us</p>
           <div className="logoGrid">
             <a
@@ -41,3 +45,5 @@ export default function Ending({ start, end }: { start: string; end: string }) {
     </div>
   );
 }
+
+export default Ending;
