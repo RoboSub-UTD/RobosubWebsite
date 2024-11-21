@@ -21,10 +21,10 @@ const ProjectInfo = [
     URL : "/projects/MiniFloat"
   },
   {
-    title: 'RoboBoat',
+    title: 'GalaxSea',
     description: "An international competition where teams create autonomous robotic boats to navigate through different challenges.",
     imgSrc: "imgs/projects/roboboat-logo.png",
-    URL : "/projects/Roboboat"
+    URL : "/projects/galaxsea"
   }
 ];
 

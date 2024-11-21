@@ -62,7 +62,7 @@ function Navbar() {
                     <li onClick={()=>goTo("/projects/mate")}>MateROV</li>
                     <li onClick={()=>goTo("/projects/float")} >Float Tube</li>
                     <li onClick={()=>goTo("/projects/minifloat")}>Mini Float</li>
-                    <li onClick={()=>goTo("/projects/roboboat")}>RoboBoat</li>
+                    <li onClick={()=>goTo("/projects/galaxsea`")}>galaxsea</li>
                   </ul>
                 </div>
               </li>
