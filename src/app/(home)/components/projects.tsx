@@ -1,11 +1,11 @@
 import React from 'react';
-import '../styles/projects.css'
+import '../styles/projects.css';
 import ProjectInfo from './projectInfo';
 import ProjectCard from './projectCard';
 
 const goToPage = (url: string) => {
-  window.location.href = url
-}
+  window.location.href = url;
+};
 
 export default function Projects() {
   return (
@@ -24,4 +24,4 @@ export default function Projects() {
       </div>
     </div>
   );
-};
+}

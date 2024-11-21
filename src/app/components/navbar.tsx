@@ -7,8 +7,8 @@ function Navbar() {
   const [user] = useState(null);
 
   const goTo = (URL: string) => {
-    window.location.href = URL
-  }
+    window.location.href = URL;
+  };
 
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -28,47 +28,72 @@ function Navbar() {
 
   return (
     <div>
-      <nav className='navbar'>
+      <nav className="navbar">
         <div className="navbar-content">
-          <div className='left' unselectable={"on"} onClick={() => {
-            if (isHomePage) {
-              scrollToSection('Home');
-            }
-            else {
-              goTo('/');
-            }
-          }}>
-            <img className='logo-img' src="/imgs/RobosubLogo.png" alt="RoboSub Logo" />
-            <h1 className='Title'>RoboSub UTD</h1>
+          <div
+            className="left"
+            unselectable={'on'}
+            onClick={() => {
+              if (isHomePage) {
+                scrollToSection('Home');
+              } else {
+                goTo('/');
+              }
+            }}
+          >
+            <img
+              className="logo-img"
+              src="/imgs/RobosubLogo.png"
+              alt="RoboSub Logo"
+            />
+            <h1 className="Title">RoboSub UTD</h1>
           </div>
 
-          <div className='right'>
-            <ul className='navbar-menu'>
+          <div className="right">
+            <ul className="navbar-menu">
               {isHomePage && (
                 <>
-                  <li className='navbar-item'>
-                    <button onClick={() => scrollToSection('AboutRobo')}>About</button>
+                  <li className="navbar-item">
+                    <button onClick={() => scrollToSection('AboutRobo')}>
+                      About
+                    </button>
                   </li>
-                  <li className='navbar-item'>
-                    <button onClick={() => scrollToSection('Officers')}>Officers </button>
+                  <li className="navbar-item">
+                    <button onClick={() => scrollToSection('Officers')}>
+                      Officers{' '}
+                    </button>
                   </li>
                 </>
               )}
 
               <li className="navbar-item projects-menu">
-                <button onClick={() => scrollToSection('Projects')} className="dropdown-button"><a href='/' className='navbar-item'>Projects</a> <span className="arrow">&#9662;</span></button>
-                <div className='dropdown-container'>
+                <button
+                  onClick={() => scrollToSection('Projects')}
+                  className="dropdown-button"
+                >
+                  <a href="/" className="navbar-item">
+                    Projects
+                  </a>{' '}
+                  <span className="arrow">&#9662;</span>
+                </button>
+                <div className="dropdown-container">
                   <ul className="dropdown-menu">
-                    <li onClick={()=>goTo("/projects/mate")}>MateROV</li>
-                    <li onClick={()=>goTo("/projects/float")} >Float Tube</li>
-                    <li onClick={()=>goTo("/projects/minifloat")}>Mini Float</li>
-                    <li onClick={()=>goTo("/projects/galaxsea`")}>galaxsea</li>
+                    <li onClick={() => goTo('/projects/mate')}>MateROV</li>
+                    <li onClick={() => goTo('/projects/float')}>Float Tube</li>
+                    <li onClick={() => goTo('/projects/minifloat')}>
+                      Mini Float
+                    </li>
+                    <li onClick={() => goTo('/projects/galaxsea`')}>
+                      galaxsea
+                    </li>
                   </ul>
                 </div>
               </li>
               {isHomePage && (
-                <li className='navbar-item'>
-                  <button onClick={() => scrollToSection('Sponsors')}>Sponsors</button>
+                <li className="navbar-item">
+                  <button onClick={() => scrollToSection('Sponsors')}>
+                    Sponsors
+                  </button>
                 </li>
               )}
             </ul>
@@ -78,7 +103,13 @@ function Navbar() {
           </div>
         </div>
       </nav>
-      <SideBar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} scrollToSection={scrollToSection} user={true} logOut={false} />
+      <SideBar
+        isSidebarOpen={isSidebarOpen}
+        toggleSidebar={toggleSidebar}
+        scrollToSection={scrollToSection}
+        user={true}
+        logOut={false}
+      />
     </div>
   );
 }

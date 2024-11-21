@@ -1,6 +1,6 @@
 'use client';
 
-import '../styles/welcome.css'
+import '../styles/welcome.css';
 import React, { useEffect, useRef } from 'react';
 import { Parallax } from 'react-scroll-parallax';
 
@@ -14,16 +14,20 @@ export default function Welcome() {
   useEffect(() => {
     const handleScroll = () => {
       const value = window.scrollY; // Corrected to window.scrollY for the scroll position
-      if (wave1Ref.current) { // @ts-ignore
+      if (wave1Ref.current) {
+        // @ts-ignore
         wave1Ref.current.style.backgroundPositionX = 400 + value + 'px';
       }
-      if (wave2Ref.current) { // @ts-ignore
+      if (wave2Ref.current) {
+        // @ts-ignore
         wave2Ref.current.style.backgroundPositionX = 300 + value + 'px';
       }
-      if (wave3Ref.current) { // @ts-ignore
+      if (wave3Ref.current) {
+        // @ts-ignore
         wave3Ref.current.style.backgroundPositionX = 200 + value + 'px';
       }
-      if (wave4Ref.current) { // @ts-ignore
+      if (wave4Ref.current) {
+        // @ts-ignore
         wave4Ref.current.style.backgroundPositionX = 100 + value + 'px';
       }
     };
@@ -39,23 +43,28 @@ export default function Welcome() {
 
   // @ts-ignore
   // @ts-ignore
-  return(
+  return (
     <div id="Home">
       <section>
-        <div className='TitleCon'>
-          <Parallax className="parallax-container" translateX={['-100px', '100px']}>
-            <h1 className='titleText'>Dive deep with <span style={{'color' : 'white '}}>RoboSub</span></h1>
+        <div className="TitleCon">
+          <Parallax
+            className="parallax-container"
+            translateX={['-100px', '100px']}
+          >
+            <h1 className="titleText">
+              Dive deep with <span style={{ color: 'white ' }}>RoboSub</span>
+            </h1>
           </Parallax>
           <Parallax translateY={[-100, 100]} translateX={['200px', '-300px']}>
-            <img src="/imgs/subROV.png" alt='sub' className='SubPhoto'></img>
+            <img src="/imgs/subROV.png" alt="sub" className="SubPhoto"></img>
           </Parallax>
         </div>
 
-        <div className='wave' ref={wave1Ref} id='wave1'></div>
-        <div className='wave' ref={wave2Ref} id='wave2'></div>
-        <div className='wave' ref={wave3Ref} id='wave3'></div>
-        <div className='wave' ref={wave4Ref} id='wave4'></div>
+        <div className="wave" ref={wave1Ref} id="wave1"></div>
+        <div className="wave" ref={wave2Ref} id="wave2"></div>
+        <div className="wave" ref={wave3Ref} id="wave3"></div>
+        <div className="wave" ref={wave4Ref} id="wave4"></div>
       </section>
     </div>
-  )
+  );
 }

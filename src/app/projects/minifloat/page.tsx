@@ -1,16 +1,15 @@
 'use client';
 
-import React, {useEffect} from 'react'
-import GeneralProject from '../GeneralProject'
+import React, { useEffect } from 'react';
+import GeneralProject from '../GeneralProject';
 
-function MiniFloat(){
+function MiniFloat() {
   useEffect(() => {
-    window.scrollTo(0, 0);  // Scrolls to the top of the page
+    window.scrollTo(0, 0); // Scrolls to the top of the page
   }, []);
 
-
-  const ProjectName = "Mini Float"
-  const projectImg = "/imgs/RobosubLogo.png"
+  const ProjectName = 'Mini Float';
+  const projectImg = '/imgs/RobosubLogo.png';
   const aboutText = `
                     A smaller version of the RoboSub, designed for tighter underwater spaces, 
                     presents an exciting evolution in underwater robotics, emphasizing compactness, 
@@ -20,11 +19,11 @@ function MiniFloat(){
                     intricate coral formations that larger submersibles cannot access. Its reduced 
                     size enables it to execute delicate maneuvers and intricate tasks, making it an 
                     ideal tool for marine researchers, environmental monitors, and underwater construction 
-                    teams.`
+                    teams.`;
 
-  const ImgArr: string | never[] = []
+  const ImgArr: string | never[] = [];
 
-  return(
+  return (
     <GeneralProject
       ProjectName={ProjectName}
       ProjectImage={projectImg}
@@ -32,8 +31,7 @@ function MiniFloat(){
       // @ts-ignore
       ImgArr={ImgArr}
     />
-
-  )
+  );
 }
 
-export default MiniFloat
+export default MiniFloat;

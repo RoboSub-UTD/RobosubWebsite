@@ -1,10 +1,10 @@
-import type { Metadata } from "next";
-import { Providers } from '../../providers'
-import "./globals.css";
+import type { Metadata } from 'next';
+import { Providers } from '../../providers';
+import './globals.css';
 
 export const metadata: Metadata = {
-  title: "RoboSub UTD",
-  description: "RoboSub club at the University of Texas at Dallas",
+  title: 'RoboSub UTD',
+  description: 'RoboSub club at the University of Texas at Dallas',
 };
 
 export default function RootLayout({
@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased`}>
-      <Providers>{children}</Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
