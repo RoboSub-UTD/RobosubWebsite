@@ -1,0 +1,26 @@
+.sponsors {
+  background: linear-gradient(#0d023a, #080124);
+  padding: 50px;
+  color: white;
+}
+
+.sponsors h1 {
+  margin-bottom: 30px;
+  color: rgb(208, 207, 207);
+  text-align: left;
+  font-size: 50px;
+}
+
+.sponsor-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.sponsor-images img {
+  max-width: 600px;
+  border-radius: 30px;
+  width: 100%;
+}
