@@ -14,15 +14,19 @@ export default function Welcome() {
     const handleScroll = () => {
       const value = window.scrollY; // Corrected to window.scrollY for the scroll position
       if (wave1Ref.current) {
+        // @ts-expect-error ...
         wave1Ref.current.style.backgroundPositionX = 400 + value + 'px';
       }
       if (wave2Ref.current) {
+        // @ts-expect-error ...
         wave2Ref.current.style.backgroundPositionX = 300 + value + 'px';
       }
       if (wave3Ref.current) {
+        // @ts-expect-error ...
         wave3Ref.current.style.backgroundPositionX = 200 + value + 'px';
       }
       if (wave4Ref.current) {
+        // @ts-expect-error ...
         wave4Ref.current.style.backgroundPositionX = 100 + value + 'px';
       }
     };

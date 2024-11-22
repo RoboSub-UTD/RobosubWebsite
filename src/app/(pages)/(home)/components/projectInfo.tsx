@@ -10,7 +10,7 @@ const ProjectInfo = [
     title: 'MateROV Submarine',
     description:
       'MateROV Submarine is an underwater remotely operated vehicle designed for exploring and performing tasks in marine environments.',
-    imgSrc: '/imgs/projects/mate/mateROV.png',
+    imgSrc: '/imgs/projects/mate/MateROV.png',
     URL: '/projects/mate',
   },
 

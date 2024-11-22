@@ -80,7 +80,7 @@ function Navbar() {
                     <li onClick={() => goTo('/projects/minifloat')}>
                       Mini Float
                     </li>
-                    <li onClick={() => goTo('/projects/galaxsea')}>galaxsea</li>
+                    <li onClick={() => goTo('/projects/galaxsea')}>GalaxSea</li>
                   </ul>
                 </div>
               </li>
