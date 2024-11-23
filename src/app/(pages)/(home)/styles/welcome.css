@@ -75,6 +75,8 @@ section {
   width: 75%;
   padding: 30px;
   color: #3100ff;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: black;
 }
 
 .sub-photo {

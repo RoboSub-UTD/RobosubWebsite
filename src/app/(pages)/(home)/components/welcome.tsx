@@ -2,6 +2,13 @@ import '../styles/welcome.css';
 import React, { useEffect, useRef } from 'react';
 import { Parallax } from 'react-scroll-parallax';
 import rovImg from '@imgs/misc/subROV.png';
+import { Carousel } from 'react-responsive-carousel';
+
+
+import img0 from '@imgs/GroupPhotos/GroupPhoto.jpg';
+import img1 from '@imgs/GroupPhotos/DSC04824.jpg';
+import img2 from '@imgs/GroupPhotos/DSC04352.jpg';
+
 
 export default function Welcome() {
   // Create refs for each wave
@@ -43,6 +50,36 @@ export default function Welcome() {
   return (
     <div id="Home">
       <section>
+      <div
+        style={{
+          position: 'absolute',
+          top: '10%',
+          left: '10%',
+          width: '80%',
+          height: 'auto',
+        }}
+      >
+        <Carousel
+          showStatus={false}
+          autoPlay={true}
+          showIndicators={false}
+          showArrows={false}
+          infiniteLoop={true}
+          showThumbs={false}
+          className=''
+        >
+          <div>
+            <img className="team-image" src={img0.src} alt="groupPhoto" />
+          </div>
+          <div>
+            <img className="team-image" src={img1.src} alt="teamImage" />
+          </div>
+          <div>
+            <img className="team-image" src={img2.src} alt="Jesuit" />
+          </div>
+        </Carousel>
+        </div>
+
         <div className="title-con">
           <Parallax
             className="parallax-container"

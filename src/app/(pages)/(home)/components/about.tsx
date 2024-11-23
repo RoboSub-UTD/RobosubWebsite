@@ -30,15 +30,15 @@ function About() {
         infiniteLoop={true}
       >
         <div>
-          <img className="team-image" src={img0.src} alt="groupPhoto" />
+          <img style={{opacity : 1, maxHeight: "600px", maxWidth : "800px"}} className="team-image" src={img0.src} alt="groupPhoto" />
           <p>Hydromeda Team 2023-2024 with Crush Depth post award ceremony</p>
         </div>
         <div>
-          <img className="team-image" src={img1.src} alt="teamImage" />
+          <img style={{opacity : 1, maxHeight: "600px", maxWidth : "800px"}}className="team-image" src={img1.src} alt="teamImage" />
           <p>Hydromeda Team 2023-2024 during award ceremony</p>
         </div>
         <div>
-          <img className="team-image" src={img2.src} alt="Jesuit" />
+          <img style={{opacity : 1, maxHeight: "600px", maxWidth : "800px"}} className="team-image" src={img2.src} alt="Jesuit" />
           <p>
             Hydromeda Team 2023-2024 speaking with other competitors from Jesuit
             High School
