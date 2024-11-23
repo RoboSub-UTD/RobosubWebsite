@@ -14,7 +14,7 @@ function Officer({
 }) {
   return (
     <div key={id} className="officer">
-      <img alt="OfficerImage" className="officer-image" src={img} />
+      <img alt="OfficerImage" className="officer-image" src={`${img}`} />
       <div className="officerText">
         <h2>{name}</h2>
         <p>{title}</p>
