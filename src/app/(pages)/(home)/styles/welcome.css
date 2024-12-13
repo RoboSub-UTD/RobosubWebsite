@@ -3,6 +3,7 @@ section {
   height: 100vh;
   position: relative;
   background-color: black;
+  z-index: 0;
 }
 
 .wave {

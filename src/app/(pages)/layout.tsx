@@ -1,7 +1,8 @@
 import React from 'react';
 import type { Metadata } from 'next';
-import { Providers } from '../../providers';
-import './globals.css';
+import { Providers } from '../../../providers';
+import '../globals.css';
+import Navbar from '../components/navbar';
 
 export const metadata: Metadata = {
   title: 'RoboSub UTD',

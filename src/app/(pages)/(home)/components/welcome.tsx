@@ -66,16 +66,15 @@ export default function Welcome() {
           showArrows={false}
           infiniteLoop={true}
           showThumbs={false}
-          className=''
         >
           <div>
-            <img className="team-image" src={img0.src} alt="groupPhoto" />
+            <img className="rounded-full" src={img0.src} alt="groupPhoto" />
           </div>
           <div>
-            <img className="team-image" src={img1.src} alt="teamImage" />
+            <img className="rounded-full" src={img1.src} alt="teamImage" />
           </div>
           <div>
-            <img className="team-image" src={img2.src} alt="Jesuit" />
+            <img className="rounded-full" src={img2.src} alt="Jesuit" />
           </div>
         </Carousel>
         </div>
