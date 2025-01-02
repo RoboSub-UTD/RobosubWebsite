@@ -1,3 +1,4 @@
+"use client"
 import '../styles/welcome.css';
 import React, { useEffect, useRef } from 'react';
 import { Parallax } from 'react-scroll-parallax';
