@@ -1,4 +1,6 @@
 import React from 'react';
+import { Card, CardContent } from "@/components/ui/card";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 function Officer({
   img,
@@ -11,14 +13,29 @@ function Officer({
   title: string;
   id: string;
 }) {
+  const initials = name
+    .split(' ')
+    .map(word => word[0])
+    .join('')
+    .toUpperCase();
+
   return (
-    <div key={id} className="flex gap-5 items-center bg-transparent rounded-[10px] text-[rgb(208, 207, 207)] p-4 w-[350px] h-[100px]">
-      <img alt="OfficerImage" className="w-[100px] h-[100px] rounded-full" src={`${img}`} />
-      <div className="officerText">
-        <h2 className="mt-[15px]">{name}</h2>
-        <p className="mt-[5px]">{title}</p>
-      </div>
-    </div>
+    <Card className="w-80 bg-white/5 backdrop-blur-sm border-white/10 hover:bg-white/10 transition-all duration-300">
+      <CardContent className="pt-6">
+        <div className="flex items-center gap-4">
+          <Avatar className="h-16 w-16 border-2 border-white/20 ring-2 ring-white/10 ring-offset-2 ring-offset-[#2403a8]">
+            <AvatarImage src={img} alt={name} />
+            <AvatarFallback className="bg-white/10 text-white">
+              {initials}
+            </AvatarFallback>
+          </Avatar>
+          <div className="space-y-1">
+            <h3 className="font-medium text-lg text-white/90">{name}</h3>
+            <p className="text-white/70 text-sm">{title}</p>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
   );
 }
 
