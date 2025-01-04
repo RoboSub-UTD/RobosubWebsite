@@ -1,7 +1,7 @@
 import React from 'react';
 import './projectStyle.css';
-import Ending from '@components/ending';
-import Navbar from '@components/navbar';
+import Ending from '@/app/(pages)/components/ending';
+import Navbar from '@/app/(pages)/components/navbar';
 import { Carousel } from 'react-responsive-carousel';
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';

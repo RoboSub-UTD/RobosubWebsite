@@ -5,14 +5,11 @@ import Officers from '@/app/(pages)/(home)/components/officers';
 import Projects from '@/app/(pages)/(home)/components/projects';
 import Awards from '@/app/(pages)/(home)/components/awards';
 import Sponsors from '@/app/(pages)/(home)/components/sponsers';
-import Ending from '@/app/components/ending';
-import React, { useEffect } from 'react';
-import Navbar from '@/app/components/navbar';
+import Ending from '@/app/(pages)/components/ending';
 
 function HomePage() {
   return (
-    <div>
-        <Navbar/>
+    <div>   
         <Welcome />
         <AboutRoboSub />
         <Officers />

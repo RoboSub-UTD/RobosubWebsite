@@ -1,5 +1,5 @@
 import React from "react";
-import Officer from "@/app/components/officer";
+import Officer from "@/app/(pages)/components/officer";
 import { fetchAllOfficers } from "@/app/firebase/firestore/officers";
 
 interface OfficerInfo {
@@ -21,7 +21,7 @@ export default async function Officers() {
   }
 
   return (
-    <section id="Officers" className="min-h-screen bg-gradient-to-b from-[#2403a8] to-[#1b0478]">
+    <section id="Officers" className="bg-gradient-to-b from-[#2403a8] to-[#1b0478] relative">
       <div className="container mx-auto px-6 py-24">
         <div className="space-y-16">
           <div className="space-y-4 text-center">
