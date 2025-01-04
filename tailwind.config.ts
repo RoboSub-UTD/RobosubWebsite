@@ -72,11 +72,29 @@ export default {
   				to: {
   					height: '0'
   				}
-  			}
+  			},
+			  wave1: {
+				'0%': { transform: 'translateY(0px)' },
+				'50%': { transform: 'translateY(70px)' },
+				'100%': { transform: 'translateY(0px)' },
+			  },
+			  wave2: {
+				'0%': { transform: 'translateY(0px)' },
+				'50%': { transform: 'translateY(30px)' },
+				'100%': { transform: 'translateY(0px)' },
+			  },
+			  wave3: {
+				'0%': { transform: 'translateY(0px)' },
+				'50%': { transform: 'translateY(30px)' },
+				'100%': { transform: 'translateY(0px)' },
+			  },
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+			wave1: 'wave1 8s linear infinite',
+			wave2: 'wave2 12s linear infinite',
+			wave3: 'wave3 10s linear infinite',
   		}
   	}
   },

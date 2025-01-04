@@ -4,7 +4,7 @@ function Ending({ start, end }: { start: string; end: string }) {
   return (
     <div
       id="Connect"
-      className="h-[400px] flex flex-col justify-end relative"
+      className="h-[400px] flex flex-col justify-end"
       style={{ background: `linear-gradient(${start}, ${end})` }}
     >
       <div className="w-full h-[5px] bg-white shadow-[0_0_20px_#00ffea,0_0_40px_#00ffea,0_0_60px_#00ffea]"></div>

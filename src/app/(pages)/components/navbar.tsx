@@ -1,99 +1,99 @@
 "use client"
 import React, { useState } from 'react';
-import { usePathname } from 'next/navigation';
-import SideBar from './sidebar';
+import { useRouter, usePathname } from 'next/navigation';
+import Image from 'next/image';
 
-function Navbar() {
-  const goTo = (URL:string) => {
-    window.location.href = URL;
+const Navbar = () => {
+  const router = useRouter();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+
+  const navItems = [
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about' },
+    { name: 'Officers', path: '/officers' },
+    { name: 'Sponsors', path: '/sponsors' },
+    { name: 'Projects', path: '/projects' }
+  ];
+
+  const handleNavigation = (path: string) => {
+    router.push(path);
+    setIsMobileMenuOpen(false);
   };
-
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-
-  const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
-  };
-
-  function scrollToSection(id:string) {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }
-
-  const isHomePage = usePathname() === '/';
-
+  
   return (
-    <div>
-      <nav className="fixed top-0 left-0 w-full h-20 bg-[rgba(0,0,0,0.3)] backdrop-blur-md z-10 flex justify-around items-center px-6">
-        <div
-          className="flex items-center cursor-pointer"
-          onClick={() => {
-            if (isHomePage) {
-              scrollToSection('Home');
-            } else {
-              goTo('/');
-            }
-          }}
+    <nav className="bg-black bg-opacity-50 shadow-lg fixed w-full z-50 backdrop-blur-md ">
+      <div className="container mx-auto px-4">
+      <div className="flex justify-between items-center h-16">
+        {/* Logo and Title */}
+        <div 
+        className="flex items-center space-x-4 cursor-pointer"
+        onClick={() => handleNavigation('/')}
         >
-          <img
-            className="h-10 mr-2"
-            src="/imgs/logos/RobosubLogo.png"
-            alt="RoboSub Logo"
-          />
-          <h1 className="text-white text-2xl font-bold">RoboSub UTD</h1>
+        <div className="h-10 w-10  rounded-full flex items-center justify-center">
+          <Image src="/imgs/logos/RobosubLogo.png" width={40} height={40} alt="logo"></Image>
         </div>
+        
+        <span className="text-white font-bold text-xl">RoboSub UTD</span>
+          </div>
 
-        <div className="flex items-center">
-          <ul className="hidden md:flex space-x-6">
-            {isHomePage && (
-              <>
-                <li className="text-white text-2xl cursor-pointer hover:text-gray-300">
-                  <button onClick={() => scrollToSection('AboutRobo')}>About</button>
-                </li>
-                <li className="text-white text-2xl cursor-pointer hover:text-gray-300">
-                  <button onClick={() => scrollToSection('Officers')}>Officers</button>
-                </li>
-              </>
-            )}
-
-            <li className="relative group text-white text-2xl cursor-pointer">
-              <button className="flex items-center">
-                Projects <span className="ml-1 transform transition-transform duration-300 group-hover:rotate-180">&#9662;</span>
+          {/* Navigation Links */}
+          <div className="hidden md:flex space-x-8 text-xl">
+            {navItems.map((item) => (
+              <button
+                key={item.name}
+                onClick={() => handleNavigation(item.path)}
+                className={`${
+                  pathname === item.path ? 'text-[#53cbec] glow' : 'text-white'
+                }`}
+              >
+                {item.name}
               </button>
-              <div className="absolute w-60 hidden group-hover:block bg-black text-white rounded-lg p-4 mt-2 opacity-0 transform scale-95 transition-all duration-300 group-hover:opacity-100 group-hover:scale-100 -translate-y-2">
-                <ul className="space-y-2">
-                  <li className="hover:bg-gray-700 p-2 rounded" onClick={() => goTo('/projects/mate')}>MateROV</li>
-                  <li className="hover:bg-gray-700 p-2 rounded" onClick={() => goTo('/projects/float')}>Float Tube</li>
-                  <li className="hover:bg-gray-700 p-2 rounded" onClick={() => goTo('/projects/minifloat')}>Mini Float</li>
-                  <li className="hover:bg-gray-700 p-2 rounded" onClick={() => goTo('/projects/galaxsea')}>GalaxSea</li>
-                </ul>
-              </div>
-            </li>
+            ))}
+          </div>
 
-
-            {isHomePage && (
-              <li className="text-white text-2xl cursor-pointer hover:text-gray-300">
-                <button onClick={() => scrollToSection('Sponsors')}>Sponsors</button>
-              </li>
-            )}
-          </ul>
-          <button
-            className="text-white text-2xl md:hidden ml-4"
-            onClick={toggleSidebar}
-          >
-            ☰
-          </button>
+          {/* Mobile Menu Button */}
+          <div className="md:hidden">
+            <button 
+              className="text-white hover:text-[#53cbec] focus:outline-none"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              <svg
+                className="h-6 w-6"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
         </div>
-      </nav>
 
-      <SideBar
-        isSidebarOpen={isSidebarOpen}
-        toggleSidebar={toggleSidebar}
-        scrollToSection={scrollToSection}
-      />
-    </div>
+        {/* Mobile Menu */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1">
+              {navItems.map((item) => (
+                <button
+                  key={item.name}
+                  onClick={() => handleNavigation(item.path)}
+                  className={`block w-full text-left px-3 py-2 text-gray-200 hover:text-[#53cbec] transition-colors duration-200 font-medium ${
+                    pathname === item.path ? 'text-[#53cbec] glow' : ''
+                  }`}
+                >
+                  {item.name}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </nav>
   );
-}
+};
 
 export default Navbar;

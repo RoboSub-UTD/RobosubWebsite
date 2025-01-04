@@ -1,6 +1,5 @@
 section {
   width: 100%;
-
   position: relative;
   background-color: black;
   z-index: 0;
@@ -12,8 +11,8 @@ section {
   left: 0;
   width: 100%;
   height: 100px;
-  background: url(/imgs/misc/wave.png);
-  background-size: 1000px 100px;
+  background: url(/imgs/misc/wave.svg);
+  background-size: 1000px;
   animation: animate 3s ease-in-out infinite;
 }
 
@@ -113,5 +112,33 @@ section {
   }
   50% {
     transform: translateY(10px) rotate(-24deg);
+  }
+}
+
+.shining-stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: blink 1.5s infinite;
+  animation-delay: var(--animation-delay);
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
   }
 }
