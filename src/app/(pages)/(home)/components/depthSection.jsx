@@ -17,7 +17,7 @@ const DepthSection = () => {
 
   return (
 
-      <div className="fixed top-20 left-10  w-2 h-3/4 bg-[#125d99] z-10">
+      <div className="fixed top-20 right-1  w-2 h-3/4 bg-[#125d99] z-50">
         {/* Depth indicator */}
         <div 
           className="w-full bg-[#53cbec] absolute top-0 transition-all duration-300"

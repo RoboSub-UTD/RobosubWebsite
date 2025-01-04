@@ -76,7 +76,7 @@ function About() {
 
         {/* Animated Text */}
         <motion.div
-          className="flex flex-col items-start sm:gap-2 sm:min-w-[350px] sm:flex-1.5 sm:ml-5"
+          className="flex flex-col items-start sm:gap-2 sm:min-w-[350px] sm:flex-1.5 sm:ml-5 bg-[#125d99] p-4 rounded-lg h-1/2"
           ref={ref}
           initial="hidden"
           animate={controls}
