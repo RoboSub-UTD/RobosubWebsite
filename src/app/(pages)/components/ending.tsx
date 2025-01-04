@@ -53,6 +53,9 @@ function Ending({ start, end }: { start: string; end: string }) {
           </div>
         </div>
       </div>
+      <footer className="text-center text-white py-4">
+        &copy; {new Date().getFullYear()} All rights reserved by RoboSub UTD
+      </footer>
     </div>
   );
 }
