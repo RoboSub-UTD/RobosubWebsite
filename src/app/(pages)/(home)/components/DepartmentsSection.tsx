@@ -99,7 +99,18 @@ const DepartmentsSection = () => {
       {/* Bubble columns */}
       <BubbleColumn side="left" />
       <BubbleColumn side="right" />
-
+              <motion.div
+                className="absolute bottom-44 right-10 w-96 h-96 rounded-full bg-[#53cbec] opacity-10 blur-3xl"
+                animate={{
+                  scale: [1.2, 1, 1.2],
+                  opacity: [0.15, 0.1, 0.15],
+                }}
+                transition={{
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
       <div className="container mx-auto relative z-10">
         {/* Section Header */}
         <motion.div
@@ -147,20 +158,20 @@ const DepartmentsSection = () => {
         </motion.div>
 
         {/* Additional Info */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
           className="mt-16 text-center"
-        >
-          <p className="text-[#53cbec] text-lg font-medium">
+        > */}
+          {/* <p className="text-[#53cbec] text-lg font-medium">
             Want to join one of our departments?
-          </p>
-          <button className="mt-4 px-8 py-3 bg-[#53cbec] text-[#1b1149] font-bold rounded-full hover:bg-[#7dd7ef] transition-colors duration-300">
+          </p> */}
+          {/* <button className="mt-4 px-8 py-3 bg-[#53cbec] text-[#1b1149] font-bold rounded-full hover:bg-[#7dd7ef] transition-colors duration-300">
             Join Our Team
-          </button>
-        </motion.div>
+          </button> */}
+        {/* </motion.div> */}
       </div>
     </div>
   );

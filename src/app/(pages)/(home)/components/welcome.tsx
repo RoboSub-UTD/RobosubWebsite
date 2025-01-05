@@ -3,14 +3,11 @@ import '../styles/welcome.css';
 import React, { useEffect, useRef } from 'react';
 import { Parallax, ParallaxProvider } from 'react-scroll-parallax';
 import rovImg from '@imgs/misc/subROV.png';
-import { Carousel } from 'react-responsive-carousel';
 import { cn } from "@/lib/utils";
 import waveSvg from '@imgs/misc/wave.svg';
 import Image from 'next/image';
-import img0 from '@imgs/GroupPhotos/GroupPhoto.jpg';
-import img1 from '@imgs/GroupPhotos/DSC04824.jpg';
-import img2 from '@imgs/GroupPhotos/DSC04352.jpg';
-import Wave from './wave';
+
+ 
 
 export default function Welcome() {
   // Create refs for each wave
@@ -19,35 +16,7 @@ export default function Welcome() {
   const wave3Ref = useRef(null);
   const wave4Ref = useRef(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const value = window.scrollY; // Corrected to window.scrollY for the scroll position
-      if (wave1Ref.current) {
-        // @ts-expect-error ...
-        wave1Ref.current.style.transform = `translateX(${400 + value}px)`;
-      }
-      if (wave2Ref.current) {
-        // @ts-expect-error ...
-        wave2Ref.current.style.transform = `translateX(${300 + value}px)`;
-      }
-      if (wave3Ref.current) {
-        // @ts-expect-error ...
-        wave3Ref.current.style.transform = `translateX(${200 + value}px)`;
-      }
-      if (wave4Ref.current) {
-        // @ts-expect-error ...
-        wave4Ref.current.style.transform = `translateX(${100 + value}px)`;
-      }
-    };
 
-    // Add scroll event listener
-    window.addEventListener('scroll', handleScroll);
-
-    // Cleanup function to remove the event listener on component unmount
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   useEffect(() => {
     const starsContainer = document.querySelector('.shining-stars');
@@ -114,12 +83,7 @@ export default function Welcome() {
           className="absolute bottom-0 left-0 w-full opacity-50 animate-wave3"
           ref={wave3Ref}
         />
-        {/* <Image
-          src={waveSvg}
-          alt="wave"
-          className="absolute bottom-0 left-0 w-full  animate-wave4"
-          ref={wave4Ref}
-        /> */}
+
 
       </section>
     </div>

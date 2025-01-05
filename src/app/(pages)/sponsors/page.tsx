@@ -2,35 +2,32 @@
 import React from 'react';
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
-
+import Image from 'next/image';
 const SponsorsSection = () => {
   const sponsorTiers = [
     {
       name: "Platinum Sponsors",
-      color: "red",
+      color: "#1a6cad",
       sponsors: [
-        { name: "TechnoCorp Industries", description: "Leading provider of underwater robotics components" },
-        { name: "DeepSea Technologies", description: "Specializing in marine engineering solutions" }
+        { name: "", description: "Leading provider of underwater robotics components", img : "/imgs/sponsors/veolia.png" },
       ]
     },
     {
       name: "Gold Sponsors",
-      color: "#125d99",
+      color: "#1a6cad",
       sponsors: [
-        { name: "OceanTech Solutions", description: "Advanced sensor technology provider" },
-        { name: "Marine Systems Inc.", description: "Expert in underwater propulsion systems" },
-        { name: "AquaRobotics", description: "Innovative underwater hardware solutions" }
+        { name: "", description: "Providing technology to make our sucses happen", img : "/imgs/sponsors/solidWorks.jpg"}
       ]
     },
-    {
-      name: "Silver Sponsors",
-      color: "#1b1149",
-      sponsors: [
-        { name: "SubComp Electronics", description: "Specialized electronic components" },
-        { name: "WaterProof Systems", description: "Waterproofing solutions and consulting" },
-        { name: "RoboNav Software", description: "Navigation software development" }
-      ]
-    }
+    // {
+    //   name: "Silver Sponsors",
+    //   color: "#C0C0C0",
+    //   sponsors: [
+    //     { name: "SubComp Electronics", description: "Specialized electronic components" },
+    //     { name: "WaterProof Systems", description: "Waterproofing solutions and consulting" },
+    //     { name: "RoboNav Software", description: "Navigation software development" }
+    //   ]
+    // }
   ];
 
   const containerVariants = {
@@ -81,7 +78,7 @@ const SponsorsSection = () => {
         >
           <Card className="bg-[#125d99] border-none text-center">
             <CardContent className="pt-6">
-              <h3 className="text-3xl font-bold text-[#53cbec] mb-2">15+</h3>
+              <h3 className="text-3xl font-bold text-[#53cbec] mb-2">2+</h3>
               <p className="text-white">Active Sponsors</p>
             </CardContent>
           </Card>
@@ -108,10 +105,11 @@ const SponsorsSection = () => {
           className="space-y-12"
         >
           {sponsorTiers.map((tier, tierIndex) => (
+            
             <div key={tierIndex} className="space-y-6">
               <motion.h3 
                 variants={cardVariants}
-                className="text-2xl font-bold text-[#53cbec] mb-6"
+                className={`text-2xl font-bold text-[#1a6cad] mb-6`}
               >
                 {tier.name}
               </motion.h3>
@@ -123,6 +121,7 @@ const SponsorsSection = () => {
                   >
                     <Card className="bg-[#125d99] border-none hover:bg-[#1a6cad] transition-all duration-300 h-full">
                       <CardHeader>
+                        <Image src={sponsor.img} alt={sponsor.name} width={300} height={200} className='rounded-lg'/>
                         <h4 className="text-xl font-bold text-white">{sponsor.name}</h4>
                         <p className="text-gray-300">{sponsor.description}</p>
                       </CardHeader>

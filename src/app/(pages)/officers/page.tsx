@@ -1,6 +1,8 @@
+"use client"
 import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Github, Linkedin } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const OfficersPage = () => {
   const officers = {
@@ -60,6 +62,33 @@ const OfficersPage = () => {
 
   return (
     <div className="min-h-screen pt-10" style={{ backgroundColor: '#1b1149' }}>
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+        <motion.div
+          className="absolute top-20 left-10 w-64 h-64 rounded-full bg-[#125d99] opacity-10 blur-3xl"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.1, 0.15, 0.1],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div
+          className="absolute bottom-40 right-10 w-96 h-96 rounded-full bg-[#53cbec] opacity-10 blur-3xl"
+          animate={{
+            scale: [1.2, 1, 1.2],
+            opacity: [0.15, 0.1, 0.15],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+      </div>
+      
       <div className="container mx-auto px-4 py-8">
         {/* About Section */}
         <div className="text-center mb-16">

@@ -8,7 +8,6 @@ import Sponsors from '@/app/(pages)/components/shared/sponsers';
 import Ending from '@/app/(pages)/components/ending';
 import DepthSection from '@/app/(pages)/(home)/components/depthSection';
 import DepartmentsSection from './components/DepartmentsSection';
-import SponsorsSection from './components/sponsors';
 function HomePage() {
   return (
     <div>   
@@ -16,12 +15,12 @@ function HomePage() {
         <Welcome />
         <AboutRoboSub />
         <DepartmentsSection/>
-        <SponsorsSection/>
+        {/* <SponsorsSection/> */}
         {/* <Officers /> */}
         {/* <Projects /> */}
         {/* <Awards /> */}
         {/* <Sponsors /> */}
-        <Ending start={'#1b1149'} end={'#000000'} />
+        
     </div>
   );
 }

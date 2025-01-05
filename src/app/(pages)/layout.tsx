@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { Providers } from '../../../providers';
 import Navbar from './components/navbar';
 import '../globals.css';
+import Ending from './components/ending';
 
 export const metadata: Metadata = {
   title: 'RoboSub UTD',
@@ -19,6 +20,7 @@ export default function RootLayout({
       <body className={`antialiased`}>
         <Navbar/> 
         <Providers>{children}</Providers>
+        <Ending start={'#1b1149'} end={'#000000'} />
       </body>
     </html>
   );
