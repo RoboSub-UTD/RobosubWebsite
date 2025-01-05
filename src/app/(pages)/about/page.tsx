@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Anchor, Target, Trophy, Users } from "lucide-react";
 import { redirect, useRouter } from 'next/navigation';
-import Awards from '../components/shared/awards';
+
 
 const AboutSection = () => {
   
