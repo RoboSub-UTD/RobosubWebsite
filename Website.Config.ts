@@ -1,5 +1,8 @@
 import { Code2, Wrench, Cpu, Briefcase } from "lucide-react";
 
+
+ 
+//Departments section on home page.
 export const departments = [
   {
     name: "Programming Department",
@@ -26,7 +29,7 @@ export const departments = [
     color: "#53cbec"
   }
 ];
-
+//departments and officers on officers page
 export const officersDeps = [
     {   title : "Programing Department",
         officers : [
@@ -83,13 +86,13 @@ export const officersDeps = [
       }
     ]}
 ];
-
+// stats on officers page
 export const stats = {
     members: 156,
     founded: 2018,
     majorsRepresented: 12
   };
-
+//projects on projects page
 export const projects = [
     {
       title: "MateROV",
