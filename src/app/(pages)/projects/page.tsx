@@ -3,54 +3,8 @@ import React from 'react';
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronRight } from "lucide-react";
-
+import { projects } from 'Website.Config';
 const ProjectsSection = () => {
-  const projects = [
-    {
-      title: "MateROV",
-      image: "/api/placeholder/800/500",
-      description: "Advanced navigation system for underwater autonomous operation",
-      points: [
-        "Real-time obstacle detection and avoidance using computer vision",
-        "Multi-sensor fusion for precise localization",
-        "Dynamic path planning algorithms",
-        "Autonomous mission execution capabilities"
-      ]
-    },
-    {
-      title: "Float",
-      image: "/api/placeholder/800/500",
-      description: "Computer vision system for underwater object detection and tracking",
-      points: [
-        "Deep learning-based object detection",
-        "Real-time image processing pipeline",
-        "Underwater color correction algorithms",
-        "Multi-camera synchronization system"
-      ]
-    },
-    {
-      title: "RoboBoat",
-      image: "/api/placeholder/800/500",
-      description: "Custom-designed submarine hull and mechanical systems",
-      points: [
-        "Hydrodynamic hull optimization",
-        "Modular component design for easy maintenance",
-        "Custom thruster configuration",
-        "Waterproof electronics housing"
-      ]
-    },
-    {
-      title: "Mini ROV",
-      image: "/api/placeholder/800/500",
-      description: "Advanced control systems for precise submarine movement",
-      points: [
-        "PID control implementation",
-        "Depth and orientation stabilization",
-        "Thruster mapping and optimization",
-        "Real-time performance monitoring"
-      ]
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-[#1b1149] py-20 px-4 relative overflow-hidden">

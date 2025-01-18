@@ -3,62 +3,10 @@ import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Github, Linkedin } from 'lucide-react';
 import { motion } from 'framer-motion';
-
+import { officersDeps ,stats } from 'Website.Config';
+import Image from 'next/image';
 const OfficersPage = () => {
-  const officers = {
-    programming: [
-      {
-        name: "Sarah Chen",
-        role: "Software Lead",
-        major: "Computer Science",
-        gradYear: 2025,
-        linkedin: "https://linkedin.com/in/sarahchen",
-        github: "https://github.com/sarahchen"
-      },
-      {
-        name: "James Rodriguez",
-        role: "Computer Vision Lead",
-        major: "Software Engineering",
-        gradYear: 2025,
-        linkedin: "https://linkedin.com/in/jamesrodriguez",
-        github: "https://github.com/jrodriguez"
-      }
-    ],
-    mechanical: [
-      {
-        name: "Emily Taylor",
-        role: "Mechanical Lead",
-        major: "Mechanical Engineering",
-        gradYear: 2026,
-        linkedin: "https://linkedin.com/in/emilytaylor",
-        github: "https://github.com/etaylor"
-      },
-      {
-        name: "Michael Chang",
-        role: "Design Lead",
-        major: "Mechanical Engineering",
-        gradYear: 2026,
-        linkedin: "https://linkedin.com/in/michaelchang",
-        github: "https://github.com/mchang"
-      }
-    ],
-    electrical: [
-      {
-        name: "Alex Kumar",
-        role: "Electrical Lead",
-        major: "Electrical Engineering",
-        gradYear: 2025,
-        linkedin: "https://linkedin.com/in/alexkumar",
-        github: "https://github.com/akumar"
-      }
-    ]
-  };
 
-  const stats = {
-    members: 156,
-    founded: 2018,
-    majorsRepresented: 12
-  };
 
   return (
     <div className="min-h-screen pt-10" style={{ backgroundColor: '#1b1149' }}>
@@ -131,101 +79,64 @@ const OfficersPage = () => {
         {/* Officers Section */}
         <h2 className="text-4xl font-bold mb-12 text-center text-white">Meet Our Officers</h2>
         
-        {/* Programming Team */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold mb-6 text-[#53cbec]">Programming Department</h3>
+        
+        <div>
+        {officersDeps.map((department, index)=>(
+          <div key={index} className="mb-16">
+          <h3 className="text-2xl font-bold mb-6 text-[#53cbec]">{department.title}</h3>
           <div className="flex flex-wrap gap-6">
-            {officers.programming.map((officer, index) => (
+            {department.officers.map((officer, index) => (
               <Card key={index} className="bg-[#125d99] shadow-lg hover:shadow-xl transition-shadow flex-1 min-w-[300px] max-w-[350px]">
                 <CardContent className="p-6">
                   <div className="text-center">
+                     
                     <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-[#1b1149] flex items-center justify-center">
+                    {officer.img === "" ? 
+                      
                       <span className="text-2xl font-bold text-white">
                         {officer.name.split(' ').map(n => n[0]).join('')}
                       </span>
-                    </div>
+                      :
+                      <Image
+                          src={officer.img}
+                          alt="ProfileImg"
+                          width={96} 
+                          height={96} 
+                          className="object-cover rounded-full"
+                        />}
+                    </div> 
+                    
                     <h3 className="text-xl font-bold mb-1 text-white">{officer.name}</h3>
                     <p className="text-lg font-semibold mb-2 text-[#53cbec]">{officer.role}</p>
                     <p className="text-gray-200 mb-1">{officer.major}</p>
                     <p className="text-gray-300 mb-4">Class of {officer.gradYear}</p>
                     <div className="flex justify-center space-x-4">
+                      { officer.linkedin !== "" && 
                       <a href={officer.linkedin} className="text-gray-200 hover:text-[#53cbec] transition-colors">
                         <Linkedin className="w-6 h-6" />
                       </a>
+                      }
+                      { officer.github !== "" && 
                       <a href={officer.github} className="text-gray-200 hover:text-[#53cbec] transition-colors">
                         <Github className="w-6 h-6" />
                       </a>
+                      }
                     </div>
                   </div>
                 </CardContent>
               </Card>
             ))}
           </div>
+        </div>
+        ))}
         </div>
 
-        {/* Mechanical Team */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold mb-6 text-[#53cbec]">Mechanical Department</h3>
-          <div className="flex flex-wrap gap-6">
-            {officers.mechanical.map((officer, index) => (
-              <Card key={index} className="bg-[#125d99] shadow-lg hover:shadow-xl transition-shadow flex-1 min-w-[300px] max-w-[350px]">
-                <CardContent className="p-6">
-                  <div className="text-center">
-                    <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-[#1b1149] flex items-center justify-center">
-                      <span className="text-2xl font-bold text-white">
-                        {officer.name.split(' ').map(n => n[0]).join('')}
-                      </span>
-                    </div>
-                    <h3 className="text-xl font-bold mb-1 text-white">{officer.name}</h3>
-                    <p className="text-lg font-semibold mb-2 text-[#53cbec]">{officer.role}</p>
-                    <p className="text-gray-200 mb-1">{officer.major}</p>
-                    <p className="text-gray-300 mb-4">Class of {officer.gradYear}</p>
-                    <div className="flex justify-center space-x-4">
-                      <a href={officer.linkedin} className="text-gray-200 hover:text-[#53cbec] transition-colors">
-                        <Linkedin className="w-6 h-6" />
-                      </a>
-                      <a href={officer.github} className="text-gray-200 hover:text-[#53cbec] transition-colors">
-                        <Github className="w-6 h-6" />
-                      </a>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
 
-        {/* Electrical Team */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold mb-6 text-[#53cbec]">Electrical Department</h3>
-          <div className="flex flex-wrap gap-6">
-            {officers.electrical.map((officer, index) => (
-              <Card key={index} className="bg-[#125d99] shadow-lg hover:shadow-xl transition-shadow flex-1 min-w-[300px] max-w-[350px]">
-                <CardContent className="p-6">
-                  <div className="text-center">
-                    <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-[#1b1149] flex items-center justify-center">
-                      <span className="text-2xl font-bold text-white">
-                        {officer.name.split(' ').map(n => n[0]).join('')}
-                      </span>
-                    </div>
-                    <h3 className="text-xl font-bold mb-1 text-white">{officer.name}</h3>
-                    <p className="text-lg font-semibold mb-2 text-[#53cbec]">{officer.role}</p>
-                    <p className="text-gray-200 mb-1">{officer.major}</p>
-                    <p className="text-gray-300 mb-4">Class of {officer.gradYear}</p>
-                    <div className="flex justify-center space-x-4">
-                      <a href={officer.linkedin} className="text-gray-200 hover:text-[#53cbec] transition-colors">
-                        <Linkedin className="w-6 h-6" />
-                      </a>
-                      <a href={officer.github} className="text-gray-200 hover:text-[#53cbec] transition-colors">
-                        <Github className="w-6 h-6" />
-                      </a>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
+
+
+
+
+
       </div>
     </div>
   );

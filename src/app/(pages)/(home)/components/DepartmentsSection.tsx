@@ -2,7 +2,7 @@
 import React from 'react';
 import { Card, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { Code2, Wrench, Cpu, Briefcase } from "lucide-react";
+import { departments } from 'Website.Config';
 
 const Bubble = ({ size, delay, left } : any) => {
   return (
@@ -43,33 +43,6 @@ const BubbleColumn = ({ side } : any) => {
 };
 
 const DepartmentsSection = () => {
-  const departments = [
-    {
-      name: "Programming Department",
-      description: "Our software team develops cutting-edge autonomous navigation systems, implements advanced computer vision algorithms, and creates robust control systems. We work with ROS2, Python, and C++ to make our submarine think and act intelligently underwater.",
-      icon: Code2,
-      color: "#53cbec"
-    },
-    {
-      name: "Mechanical Department",
-      description: "The mechanical team designs and fabricates our submarine's hull, propulsion systems, and waterproof enclosures. We use CAD software, 3D printing, and traditional manufacturing techniques to create innovative solutions for underwater challenges.",
-      icon: Wrench,
-      color: "#53cbec"
-    },
-    {
-      name: "Electrical Department",
-      description: "Our electrical engineers design power distribution systems, integrate sensors, and create custom circuit boards. We manage complex battery systems and implement fail-safe mechanisms to ensure reliable operation in underwater environments.",
-      icon: Cpu,
-      color: "#53cbec"
-    },
-    {
-      name: "Business Department",
-      description: "The business team manages our resources, coordinates with sponsors, and handles competition logistics. We develop presentation materials, maintain documentation, and ensure the team's long-term sustainability.",
-      icon: Briefcase,
-      color: "#53cbec"
-    }
-  ];
-
   const containerVariants = {
     hidden: {},
     visible: {
