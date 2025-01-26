@@ -40,7 +40,8 @@ export const officersDeps = [
         major: "Mechanical Engineering",
         img: "",
         gradYear: 2027,
-        linkedin: "",
+        linkedin: "https://linkedin.com/in/sarahchen",
+        github: "https://github.com/sarahchen"
       }
     ]
   },
@@ -53,6 +54,8 @@ export const officersDeps = [
         major: "Mechanical Engineering",
         img: "",
         gradYear:  2027,
+        linkedin: "https://linkedin.com/in/sarahchen",
+        github: "https://github.com/sarahchen"
 
       },
       {
