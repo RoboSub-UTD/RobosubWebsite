@@ -43,10 +43,10 @@ const OfficersPage = () => {
           <h1 className="text-5xl font-bold mb-8 text-white">RoboSub Team</h1>
           <div className="max-w-4xl mx-auto space-y-6 text-gray-200">
             <p className="text-lg">
-              Our RoboSub team is a dynamic group of innovative engineers and problem-solvers dedicated to pushing the boundaries of autonomous underwater robotics. Since our founding in 2018, we've grown into one of the most competitive teams in international RoboSub competitions.
+              Our RoboSub team is a dynamic group of innovative engineers and problem-solvers dedicated to pushing the boundaries of marine robotics. Since our founding in 2022, we've grown into a large community of engineers at UTD who love to build robots for the water.
             </p>
             <p className="text-lg">
-              Our diverse team brings together expertise from multiple engineering disciplines, creating a collaborative environment where creativity meets technical excellence. From advanced computer vision systems to sophisticated mechanical designs, our members contribute unique skills to create cutting-edge autonomous underwater vehicles.
+              Our diverse team brings together expertise from multiple engineering disciplines, creating a collaborative environment where creativity meets technical excellence. From advanced computer vision systems to sophisticated mechanical designs, our members contribute unique skills to create cutting-edge marine vehicles.
             </p>
             <p className="text-lg">
               Through dedication, innovation, and teamwork, we've consistently demonstrated our ability to tackle complex challenges in underwater robotics, earning recognition for our technical achievements and innovative solutions.

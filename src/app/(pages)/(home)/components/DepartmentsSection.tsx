@@ -94,7 +94,7 @@ const DepartmentsSection = () => {
         >
           <h2 className="text-4xl font-bold text-white mb-4">Our Departments</h2>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            Each department plays a crucial role in our team's success, bringing together diverse skills and expertise to create an advanced autonomous underwater vehicle.
+            Each department plays a crucial role in our team's success, bringing together diverse skills and expertise to create an advanced marine vehicles.
           </p>
         </motion.div>
 
@@ -110,7 +110,7 @@ const DepartmentsSection = () => {
             const Icon = dept.icon;
             return (
               <motion.div key={index} variants={cardVariants}>
-                <Card className="bg-[#125d99] border-none hover:bg-[#1a6cad] transition-colors duration-300 group backdrop-blur-sm bg-opacity-90">
+                <Card className="bg-[#125d99] border-none hover:bg-[#1a6cad] h-40 transition-colors duration-300 group backdrop-blur-sm bg-opacity-90">
                   <CardHeader>
                     <div className="flex items-center space-x-4">
                       <div className="p-3 rounded-full bg-[#1b1149] group-hover:bg-[#232066] transition-colors duration-300">

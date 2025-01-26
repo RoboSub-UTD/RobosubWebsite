@@ -7,14 +7,14 @@ import { redirect, useRouter } from 'next/navigation';
 
 
 const AboutSection = () => {
-  
-    const router = useRouter();
-  
-    const highlights = [
+
+  const router = useRouter();
+
+  const highlights = [
     {
       icon: Trophy,
       title: "Competition Ready",
-      description: "Participating in international RoboSub competitions, showcasing our innovative solutions"
+      description: "Participating in international competitions, showcasing our innovative solutions"
     },
     {
       icon: Users,
@@ -24,7 +24,7 @@ const AboutSection = () => {
     {
       icon: Target,
       title: "Mission-Driven",
-      description: "Focused on advancing autonomous underwater vehicle technology through practical application"
+      description: "Focused on advancing marine robotic technology through practical application"
     },
     {
       icon: Anchor,
@@ -75,7 +75,7 @@ const AboutSection = () => {
           <h2 className="text-4xl font-bold text-white mb-6">About RoboSub UTD</h2>
           <div className="prose prose-lg text-gray-300 mx-auto space-y-6">
             <p>
-              RoboSub UTD is a competitive student organization dedicated to designing, building, and programming autonomous underwater vehicles (AUVs). Our team participates in the annual RoboSub competition, where we showcase our innovative solutions in submarine robotics and autonomous systems.
+              RoboSub UTD is a competitive student organization dedicated to designing, building, and programming remote operated vehicles (ROVs) and autonomous surface vehicles (ASV's). Our team participates in the annual MATE ROV and RoboBoat competitions, where we showcase our innovative solutions in submarine robotics and autonomous systems.
             </p>
             <p>
               Founded by passionate engineering students, our team brings together diverse talents from computer science, mechanical engineering, electrical engineering, and other disciplines. We work collaboratively to tackle complex challenges in underwater robotics, from advanced computer vision systems to sophisticated mechanical designs.
@@ -111,7 +111,7 @@ const AboutSection = () => {
             );
           })}
         </motion.div>
-        
+
 
 
         {/* Call to Action */}
@@ -122,7 +122,7 @@ const AboutSection = () => {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <button onClick={()=>{(router.push('/projects'))}} className="px-8 py-3 bg-[#53cbec] text-[#1b1149] font-bold rounded-full hover:bg-[#7dd7ef] transition-colors duration-300">
+          <button onClick={() => { (router.push('/projects')) }} className="px-8 py-3 bg-[#53cbec] text-[#1b1149] text-3xl font-bold rounded-full hover:bg-[#7dd7ef] transition-colors duration-300">
             Learn More About Our Projects
           </button>
         </motion.div>
@@ -135,10 +135,12 @@ const AboutSection = () => {
           className="text-center max-w-4xl mx-auto mb-16 mt-10"
         >
           <h2 className="text-4xl font-bold text-white mb-6">Our Awards</h2>
+
           <div className="prose prose-lg text-gray-300 mx-auto space-y-6 flex flex-col md:flex-row gap-10 justify-center">
             <img alt="award1" src="/imgs/awards/doc.png" className="max-w-[500px]" />
             <img alt="award2" src="/imgs/awards/third.png" className="max-w-[500px]" />
           </div>
+
         </motion.div>
       </div>
     </div>

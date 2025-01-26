@@ -46,7 +46,7 @@ const ProjectsSection = () => {
         >
           <h2 className="text-5xl font-bold text-white mb-6">Our Projects</h2>
           <p className="text-xl text-gray-300">
-            Exploring the frontiers of underwater robotics through innovative engineering solutions
+            Exploring the frontiers of marine robotics through innovative engineering solutions
           </p>
         </motion.div>
 
