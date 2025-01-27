@@ -38,11 +38,52 @@ export const officersDeps = [
         name: "Ken Shibatani",
         role: "President",
         major: "Mechanical Engineering",
-        img: "",
+        img: "/imgs/officers/cen.png",
         gradYear: 2027,
-        linkedin: "https://linkedin.com/in/sarahchen",
-        github: "https://github.com/sarahchen"
-      }
+      },
+
+      {
+        name: "Brandon Lam",
+        role: "Vice President",
+        major: "Mechanical Engineering",
+        img: "/imgs/officers/brandon.png",
+        gradYear: 2027
+      },
+      {
+        name: "Colin Wong",
+        role: "Treasurer",
+        major: "Computer Science",
+        img: "/imgs/officers/colin.png",
+        gradYear: 2027,
+      },
+      {
+        name: "Nathan Wignall",
+        role: "Secretary",
+        major: "Computer Engineering",
+        img: "/imgs/officers/Nathan_Wignall.jpeg",
+        gradYear: 2027,
+      },
+      {
+        name: "James Dungan",
+        role: "Outreach Director",
+        major: "Business Administration",
+        img: "/imgs/officers/james.png",
+        gradYear: 2028,
+      },
+      {
+        name: "Anna Xie",
+        role: "Marketing Director",
+        major: "GIS + Minor in Design",
+        img: "/imgs/officers/anna.png",
+        gradYear: 2026,
+      },
+      {
+        name: "Farhan Jamil",
+        role: "RoboBoat Director",
+        major: "Computer Science",
+        img: "/imgs/officers/farhan.png",
+        gradYear: 2025,
+      },
     ]
   },
   {
@@ -53,14 +94,32 @@ export const officersDeps = [
         role: "Mechanical Lead",
         major: "Mechanical Engineering",
         img: "",
-        gradYear:  2027,
-        linkedin: "https://linkedin.com/in/sarahchen",
-        github: "https://github.com/sarahchen"
-
+        gradYear: 2027,
+      },
+      {
+        name: "Mohammad Khan",
+        role: "Programming Lead",
+        major: "Neuroscience + Math + Minor in CS",
+        img: "/imgs/officers/mohammad.png",
+        gradYear: 2026,
+      },
+      {
+        name: "Ishaan Mistry",
+        role: "Electrical Lead",
+        major: "Electrical Engineering",
+        img: "/imgs/officers/ishaan.png",
+        gradYear: 2024,
+      },
+      {
+        name: "Tiffany Leung",
+        role: "Float Lead",
+        major: "BMEN",
+        img: "/imgs/officers/tiffany.png",
+        gradYear: 2025,
       },
       {
         name: "Andrew Dmitrievsky",
-        role: "Software Lead",
+        role: "Web Master",
         major: "Computer Science",
         img: "/officers/Example.jpeg",
         gradYear: 2025,
@@ -72,22 +131,64 @@ export const officersDeps = [
   {
     title: "RoboBoat Team",
     officers: [
-      
-      
-    ]
-  },
-  {
-    title: "Programing Department",
-    officers: [
-      
-      
-    ]
-  },
-  
-  {
-    title: "Electrical Department",
-    officers: [
-     
+      {
+        name: "Farhan Jamil",
+        role: "RoboBoat Director",
+        major: "Computer Science",
+        img: "/imgs/officers/farhan.png",
+        gradYear: 2025,
+      },
+      {
+        name: "Brandon Lam",
+        role: "Mechanical Lead",
+        major: "Mechanical Engineering",
+        img: "/imgs/officers/brandon.png",
+        gradYear: 2027
+      },
+      {
+        name: "Dineshman Bajracharya",
+        role: "Electrical Lead",
+        major: "Computer Engineering",
+        img: "/imgs/officers/Dineshman_Bajracharya.jpg",
+        gradYear: 2027
+      },
+      {
+        name: "Jonathan Lewis",
+        role: "Programming Lead",
+        major: "Computer Science",
+        img: "/imgs/officers/jonathan.jpg",
+        gradYear: 2027
+      },
+      {
+        name: "Nathan Wignall",
+        role: "Electrical Team",
+        major: "Computer Engineering",
+        img: "/imgs/officers/Nathan_Wignall.jpeg",
+        gradYear: 2027,
+      },
+      {
+        name: "Samip Lamichhane",
+        role: "Electrical Team",
+        major: "Electrical Engineering",
+        img: "/imgs/officers/Samip.jpg",
+        gradYear: 2027,
+      },
+      {
+        name: "Gael Luna",
+        role: "Mechanical Team",
+        major: "Mechanical Engineering",
+        img: "/imgs/officers/Gael_Luna.jpg",
+        gradYear: 2025,
+      },
+      {
+        name: "Andrew Patterson",
+        role: "Mechanical Team",
+        major: "Mechanical Engineering",
+        img: "/imgs/officers/Andrew Patterson.jpeg",
+        gradYear: 2026,
+      },
+
+
     ]
   }
 ];

@@ -6,6 +6,15 @@ import { motion } from 'framer-motion';
 import { officersDeps ,stats } from 'Website.Config';
 import Image from 'next/image';
 const OfficersPage = () => {
+  type Officer = {
+    name: string;
+    role: string;
+    major: string;
+    img: string;
+    gradYear: number;
+    linkedin?: string; // Optional
+    github?: string;   // Optional
+  };
 
 
   return (
@@ -85,7 +94,7 @@ const OfficersPage = () => {
           <div key={index} className="mb-16">
           <h3 className="text-2xl font-bold mb-6 text-[#53cbec]">{department.title}</h3>
           <div className="flex flex-wrap gap-6">
-            {department.officers.map((officer, index) => (
+            {department.officers.map((officer: Officer, index) => (
               <Card key={index} className="bg-[#125d99] shadow-lg hover:shadow-xl transition-shadow flex-1 min-w-[300px] max-w-[350px]">
                 <CardContent className="p-6">
                   <div className="text-center">
@@ -111,12 +120,12 @@ const OfficersPage = () => {
                     <p className="text-gray-200 mb-1">{officer.major}</p>
                     <p className="text-gray-300 mb-4">Class of {officer.gradYear}</p>
                     <div className="flex justify-center space-x-4">
-                      { officer.linkedin !== "" && 
+                      { officer.linkedin && 
                       <a href={officer.linkedin} className="text-gray-200 hover:text-[#53cbec] transition-colors">
                         <Linkedin className="w-6 h-6" />
                       </a>
                       }
-                      { officer.github !== "" && 
+                      { officer.github && 
                       <a href={officer.github} className="text-gray-200 hover:text-[#53cbec] transition-colors">
                         <Github className="w-6 h-6" />
                       </a>

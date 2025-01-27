@@ -98,6 +98,17 @@ const CallToAction = () => {
                         Learn More About Our Projects
                     </button>
                 </motion.div>
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.6, delay: 0.6 }}
+                    viewport={{ once: true }}
+                    className="text-center mt-16"
+                >
+                    <button onClick={() => { (router.push('/roboboat')) }} className="px-8 py-3 bg-[#53cbec] text-[#1b1149] text-3xl font-bold rounded-full hover:bg-[#7dd7ef] transition-colors duration-300">
+                        Read About Our Current RoboBoat Project
+                    </button>
+                </motion.div>
 
             </div>
         </div>
