@@ -30,7 +30,7 @@ const LaunchersPage = () => {
           <h3 className="text-3xl font-bold mb-4">Key Features</h3>
           <ul className="list-disc list-inside space-y-4 text-gray-300">
             <li>
-              <strong>Yaw and Pitch Control:</strong>> Independent motion for aiming without repositioning the boat.
+              <strong>Yaw and Pitch Control:</strong> Independent motion for aiming without repositioning the boat.
             </li>
             <li>
               <strong>Flywheel Ball Launcher:</strong> Effective and reliable for precision delivery, inspired by proven robotics designs.

@@ -60,18 +60,22 @@ const ProjectsSection = () => {
               project.title === "MateROV" ||
               project.title === "Float";
 
-            const Wrapper = isSpecialProject ? Link : React.Fragment;
-
-            const wrapperProps = isSpecialProject
-              ? {
-                href:
-                  project.title === "RoboBoat"
-                    ? "/roboboat"
-                    : project.title === "MateROV"
-                      ? "/materov"
-                      : "/float",
-              }
-              : {};
+            const Wrapper = ({ children }: { children: React.ReactNode }) =>
+              isSpecialProject ? (
+                <Link
+                  href={
+                    project.title === "RoboBoat"
+                      ? "/roboboat"
+                      : project.title === "MateROV"
+                        ? "/materov"
+                        : "/float"
+                  }
+                >
+                  {children}
+                </Link>
+              ) : (
+                <>{children}</>
+              );
 
             return (
               <motion.div
@@ -81,7 +85,7 @@ const ProjectsSection = () => {
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: true }}
               >
-                <Wrapper {...wrapperProps}>
+                <Wrapper>
                   <Card className="bg-[#125d99]/20 border-none overflow-hidden hover:bg-[#125d99]/30 transition-all duration-300 cursor-pointer">
                     <CardContent className="p-0">
                       <div className="relative">
