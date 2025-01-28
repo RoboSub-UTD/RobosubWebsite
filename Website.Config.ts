@@ -123,8 +123,8 @@ export const officersDeps = [
         major: "Computer Science",
         img: "/officers/Example.jpeg",
         gradYear: 2025,
-        linkedin: "https://linkedin.com/in/sarahchen",
-        github: "https://github.com/sarahchen"
+        linkedin: "https://www.linkedin.com/in/andrewdmit/",
+        github: "https://github.com/AndrewDmit04"
       },
     ]
   },
