@@ -39,7 +39,7 @@ export const officersDeps = [
         role: "President",
         major: "Mechanical Engineering",
         img: "/imgs/officers/cen.png",
-        gradYear: 2027,
+        gradYear: 2026,
       },
 
       {
@@ -47,21 +47,23 @@ export const officersDeps = [
         role: "Vice President",
         major: "Mechanical Engineering",
         img: "/imgs/officers/brandon.png",
-        gradYear: 2027
+        gradYear: 2026,
       },
       {
         name: "Colin Wong",
         role: "Treasurer",
-        major: "Computer Science",
+        major: "Computer Science + Minors in Math & Cognitive Science",
         img: "/imgs/officers/colin.png",
         gradYear: 2027,
+        linkedin: "https://www.linkedin.com/in/the-colin-wong",
+        github: "https://github.com/democat3457",
       },
       {
         name: "Nathan Wignall",
         role: "Secretary",
         major: "Computer Engineering",
         img: "/imgs/officers/Nathan_Wignall.jpeg",
-        gradYear: 2027,
+        gradYear: 2028,
       },
       {
         name: "James Dungan",
@@ -75,7 +77,7 @@ export const officersDeps = [
         role: "Marketing Director",
         major: "GIS + Minor in Design",
         img: "/imgs/officers/anna.png",
-        gradYear: 2026,
+        gradYear: 2025,
       },
       {
         name: "Farhan Jamil",
@@ -83,6 +85,15 @@ export const officersDeps = [
         major: "Computer Science",
         img: "/imgs/officers/farhan.png",
         gradYear: 2025,
+      },
+      {
+        name: "Andrew Dmitrievsky",
+        role: "Web Master",
+        major: "Computer Science",
+        img: "/officers/Example.jpeg",
+        gradYear: 2025,
+        linkedin: "https://www.linkedin.com/in/andrewdmit/",
+        github: "https://github.com/AndrewDmit04",
       },
     ]
   },
@@ -94,7 +105,7 @@ export const officersDeps = [
         role: "Mechanical Lead",
         major: "Mechanical Engineering",
         img: "",
-        gradYear: 2027,
+        gradYear: 2026,
       },
       {
         name: "Mohammad Khan",
@@ -115,16 +126,7 @@ export const officersDeps = [
         role: "Float Lead",
         major: "BMEN",
         img: "/imgs/officers/tiffany.png",
-        gradYear: 2025,
-      },
-      {
-        name: "Andrew Dmitrievsky",
-        role: "Web Master",
-        major: "Computer Science",
-        img: "/officers/Example.jpeg",
-        gradYear: 2025,
-        linkedin: "https://www.linkedin.com/in/andrewdmit/",
-        github: "https://github.com/AndrewDmit04"
+        gradYear: 2026,
       },
     ]
   },
@@ -143,52 +145,22 @@ export const officersDeps = [
         role: "Mechanical Lead",
         major: "Mechanical Engineering",
         img: "/imgs/officers/brandon.png",
-        gradYear: 2027
+        gradYear: 2026,
       },
       {
         name: "Dineshman Bajracharya",
         role: "Electrical Lead",
         major: "Computer Engineering",
         img: "/imgs/officers/Dineshman_Bajracharya.jpg",
-        gradYear: 2027
+        gradYear: 2026,
       },
       {
         name: "Jonathan Lewis",
         role: "Programming Lead",
         major: "Computer Science",
         img: "/imgs/officers/jonathan.jpg",
-        gradYear: 2027
+        gradYear: 2028,
       },
-      {
-        name: "Nathan Wignall",
-        role: "Electrical Team",
-        major: "Computer Engineering",
-        img: "/imgs/officers/Nathan_Wignall.jpeg",
-        gradYear: 2027,
-      },
-      {
-        name: "Samip Lamichhane",
-        role: "Electrical Team",
-        major: "Electrical Engineering",
-        img: "/imgs/officers/Samip.jpg",
-        gradYear: 2027,
-      },
-      {
-        name: "Gael Luna",
-        role: "Mechanical Team",
-        major: "Mechanical Engineering",
-        img: "/imgs/officers/Gael_Luna.jpg",
-        gradYear: 2025,
-      },
-      {
-        name: "Andrew Patterson",
-        role: "Mechanical Team",
-        major: "Mechanical Engineering",
-        img: "/imgs/officers/Andrew Patterson.jpeg",
-        gradYear: 2026,
-      },
-
-
     ]
   }
 ];
@@ -208,7 +180,7 @@ export const projects = [
       "MATE ROV 2024 Pioneer 3rd Place and 1st Place Technical Documentation",
       "Custom watertight enclosure",
       "ROS2 architecture and camera vision",
-      "Modular electrical system"
+      "Modular electrical system",
     ]
   },
   {
@@ -219,7 +191,7 @@ export const projects = [
       "Bouyancy Engine System",
       "Data tracking and wireless transmission",
       "PID control implementation",
-      "Servicable and modular"
+      "Servicable and modular",
     ]
   },
   {
@@ -230,7 +202,7 @@ export const projects = [
       "Hydrodynamic hull optimization",
       "Modular component design for easy maintenance",
       "Real-time obstacle detection and avoidance using computer vision",
-      "Waterproof electronics housing"
+      "Waterproof electronics housing",
     ]
   },
   {
