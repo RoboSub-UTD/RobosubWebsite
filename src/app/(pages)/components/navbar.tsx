@@ -1,4 +1,4 @@
-"use client"
+'use client';
 import React, { useState } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import Image from 'next/image';
@@ -13,28 +13,33 @@ const Navbar = () => {
     { name: 'About', path: '/about' },
     { name: 'Officers', path: '/officers' },
     { name: 'Sponsors', path: '/sponsors' },
-    { name: 'Projects', path: '/projects' }
+    { name: 'Projects', path: '/projects' },
   ];
 
   const handleNavigation = (path: string) => {
     router.push(path);
     setIsMobileMenuOpen(false);
   };
-  
+
   return (
     <nav className="bg-black bg-opacity-50 shadow-lg fixed w-full z-50 backdrop-blur-md ">
       <div className="container mx-auto px-4">
-      <div className="flex justify-between items-center h-16">
-        {/* Logo and Title */}
-        <div 
-        className="flex items-center space-x-4 cursor-pointer"
-        onClick={() => handleNavigation('/')}
-        >
-        <div className="h-10 w-10  rounded-full flex items-center justify-center">
-          <Image src="/imgs/logos/RobosubLogo.png" width={40} height={40} alt="logo"></Image>
-        </div>
-        
-        <span className="text-white font-bold text-xl">RoboSub UTD</span>
+        <div className="flex justify-between items-center h-16">
+          {/* Logo and Title */}
+          <div
+            className="flex items-center space-x-4 cursor-pointer"
+            onClick={() => handleNavigation('/')}
+          >
+            <div className="h-10 w-10  rounded-full flex items-center justify-center">
+              <Image
+                src="/imgs/logos/RobosubLogo.png"
+                width={40}
+                height={40}
+                alt="logo"
+              ></Image>
+            </div>
+
+            <span className="text-white font-bold text-xl">RoboSub UTD</span>
           </div>
 
           {/* Navigation Links */}
@@ -54,7 +59,7 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
-            <button 
+            <button
               className="text-white hover:text-[#53cbec] focus:outline-none"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >

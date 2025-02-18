@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 
 const PerceptionPage = () => {
   return (
@@ -14,7 +14,8 @@ const PerceptionPage = () => {
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
           <h1 className="text-5xl font-bold mb-4">Perception System</h1>
           <p className="text-xl max-w-3xl">
-            Enabling Luna to understand its surroundings through advanced object detection and environmental mapping.
+            Enabling Luna to understand its surroundings through advanced object
+            detection and environmental mapping.
           </p>
         </div>
       </section>
@@ -24,50 +25,68 @@ const PerceptionPage = () => {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold mb-6 text-center">Overview</h2>
           <p className="text-lg text-gray-300 mb-8">
-            Luna’s perception system is designed to identify and classify objects, understand its environment, and provide crucial data for navigation. Using advanced technologies like LiDAR and cameras, the system ensures Luna operates effectively in dynamic environments.
+            Luna’s perception system is designed to identify and classify
+            objects, understand its environment, and provide crucial data for
+            navigation. Using advanced technologies like LiDAR and cameras, the
+            system ensures Luna operates effectively in dynamic environments.
           </p>
 
           <h3 className="text-3xl font-bold mb-4">Key Features</h3>
           <ul className="list-disc list-inside space-y-4 text-gray-300">
             <li>
-              <strong>Object Detection:</strong> Utilizes YOLOv8 for real-time identification and classification of objects.
+              <strong>Object Detection:</strong> Utilizes YOLOv8 for real-time
+              identification and classification of objects.
             </li>
             <li>
-              <strong>Environmental Mapping:</strong> Combines camera and LiDAR data with SLAM to create a detailed map of the surroundings.
+              <strong>Environmental Mapping:</strong> Combines camera and LiDAR
+              data with SLAM to create a detailed map of the surroundings.
             </li>
             <li>
-              <strong>Sensor Fusion:</strong> Integrates multiple data sources for improved accuracy and reliability.
+              <strong>Sensor Fusion:</strong> Integrates multiple data sources
+              for improved accuracy and reliability.
             </li>
             <li>
-              <strong>Obstacle Avoidance:</strong> Identifies potential hazards and generates safe navigation paths.
+              <strong>Obstacle Avoidance:</strong> Identifies potential hazards
+              and generates safe navigation paths.
             </li>
             <li>
-              <strong>Real-Time Processing:</strong> Ensures rapid response and adaptability to dynamic environments.
+              <strong>Real-Time Processing:</strong> Ensures rapid response and
+              adaptability to dynamic environments.
             </li>
           </ul>
 
           <h3 className="text-3xl font-bold mt-12 mb-4">Technology Stack</h3>
           <p className="text-gray-300 mb-4">
-            Luna’s perception system leverages state-of-the-art technologies for efficient and reliable operation:
+            Luna’s perception system leverages state-of-the-art technologies for
+            efficient and reliable operation:
           </p>
           <ul className="list-disc list-inside space-y-4 text-gray-300">
             <li>
-              <strong>SLAM (Simultaneous Localization and Mapping):</strong> RTAB-Map is used to generate a map of the environment by combining camera and LiDAR data.
+              <strong>SLAM (Simultaneous Localization and Mapping):</strong>{' '}
+              RTAB-Map is used to generate a map of the environment by combining
+              camera and LiDAR data.
             </li>
             <li>
-              <strong>Object Detection:</strong> YOLOv8 is trained to recognize buoys and other critical objects in the competition environment.
+              <strong>Object Detection:</strong> YOLOv8 is trained to recognize
+              buoys and other critical objects in the competition environment.
             </li>
             <li>
-              <strong>Odometry:</strong> Simple-2D-LiDAR-Odometry and robot-localization provide accurate position tracking.
+              <strong>Odometry:</strong> Simple-2D-LiDAR-Odometry and
+              robot-localization provide accurate position tracking.
             </li>
             <li>
-              <strong>Data Fusion:</strong> Merges LiDAR and camera inputs to ensure robust environmental understanding.
+              <strong>Data Fusion:</strong> Merges LiDAR and camera inputs to
+              ensure robust environmental understanding.
             </li>
           </ul>
 
           <h3 className="text-3xl font-bold mt-12 mb-4">Why It Matters</h3>
           <p className="text-gray-300">
-            The perception system is the foundation of Luna’s autonomy. By accurately understanding its surroundings, Luna can make informed decisions, avoid obstacles, and execute tasks with precision. This capability is essential for competitive performance and sets the stage for future enhancements.
+            The perception system is the foundation of Luna’s autonomy. By
+            accurately understanding its surroundings, Luna can make informed
+            decisions, avoid obstacles, and execute tasks with precision. This
+            capability is essential for competitive performance and sets the
+            stage for future enhancements.
           </p>
         </div>
       </section>

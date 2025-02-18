@@ -1,10 +1,10 @@
-"use client";
-import React from "react";
-import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
-import { ChevronRight } from "lucide-react";
-import { projects } from "Website.Config";
-import Link from "next/link";
+'use client';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Card, CardContent } from '@/components/ui/card';
+import { ChevronRight } from 'lucide-react';
+import { projects } from 'Website.Config';
+import Link from 'next/link';
 
 const ProjectsSection = () => {
   return (
@@ -20,7 +20,7 @@ const ProjectsSection = () => {
           transition={{
             duration: 8,
             repeat: Infinity,
-            ease: "easeInOut",
+            ease: 'easeInOut',
           }}
         />
         <motion.div
@@ -32,7 +32,7 @@ const ProjectsSection = () => {
           transition={{
             duration: 8,
             repeat: Infinity,
-            ease: "easeInOut",
+            ease: 'easeInOut',
           }}
         />
       </div>
@@ -56,19 +56,19 @@ const ProjectsSection = () => {
           {projects.map((project, index) => {
             // Check if project is RoboBoat or MATE ROV
             const isSpecialProject =
-              project.title === "RoboBoat" ||
-              project.title === "MateROV" ||
-              project.title === "Float";
+              project.title === 'RoboBoat' ||
+              project.title === 'MateROV' ||
+              project.title === 'Float';
 
             const Wrapper = ({ children }: { children: React.ReactNode }) =>
               isSpecialProject ? (
                 <Link
                   href={
-                    project.title === "RoboBoat"
-                      ? "/roboboat"
-                      : project.title === "MateROV"
-                        ? "/materov"
-                        : "/float"
+                    project.title === 'RoboBoat'
+                      ? '/roboboat'
+                      : project.title === 'MateROV'
+                        ? '/materov'
+                        : '/float'
                   }
                 >
                   {children}
@@ -100,7 +100,9 @@ const ProjectsSection = () => {
                         <h3 className="text-2xl font-bold text-white mb-3">
                           {project.title}
                         </h3>
-                        <p className="text-gray-300 mb-4">{project.description}</p>
+                        <p className="text-gray-300 mb-4">
+                          {project.description}
+                        </p>
                         <ul className="space-y-2">
                           {project.points.map((point, pointIndex) => (
                             <motion.li

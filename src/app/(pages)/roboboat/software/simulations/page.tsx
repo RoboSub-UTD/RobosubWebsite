@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 
 const SimulationPage = () => {
   return (
@@ -14,7 +14,8 @@ const SimulationPage = () => {
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
           <h1 className="text-5xl font-bold mb-4">Simulations</h1>
           <p className="text-xl max-w-3xl">
-            Virtual environments that allow Luna's systems to be tested and validated before deployment.
+            Virtual environments that allow Luna's systems to be tested and
+            validated before deployment.
           </p>
         </div>
       </section>
@@ -24,23 +25,43 @@ const SimulationPage = () => {
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold mb-6 text-center">Overview</h2>
           <p className="text-lg text-gray-300 mb-8">
-            Simulations play a critical role in Luna’s development, providing a safe and controlled environment to test navigation, perception, and AI systems.
+            Simulations play a critical role in Luna’s development, providing a
+            safe and controlled environment to test navigation, perception, and
+            AI systems.
           </p>
 
           <h3 className="text-3xl font-bold mb-4">Key Features</h3>
           <ul className="list-disc list-inside space-y-4 text-gray-300">
-            <li>Virtual testing environments for navigation and object detection.</li>
-            <li>Integration with ROS2 for real-world simulation of subsystems.</li>
-            <li>Validation of AI and control algorithms before hardware deployment.</li>
-            <li>Support for multiple scenarios, including obstacle avoidance and task completion.</li>
+            <li>
+              Virtual testing environments for navigation and object detection.
+            </li>
+            <li>
+              Integration with ROS2 for real-world simulation of subsystems.
+            </li>
+            <li>
+              Validation of AI and control algorithms before hardware
+              deployment.
+            </li>
+            <li>
+              Support for multiple scenarios, including obstacle avoidance and
+              task completion.
+            </li>
             <li>Time-efficient debugging and system iteration.</li>
           </ul>
 
           <h3 className="text-3xl font-bold mt-12 mb-4">Tools Used</h3>
           <ul className="list-disc list-inside space-y-4 text-gray-300">
-            <li><strong>Gazebo:</strong> Simulates physical environments and vehicle dynamics.</li>
-            <li><strong>RTAB-Map:</strong> Creates virtual maps from sensor data.</li>
-            <li><strong>RViz:</strong> Visualizes sensor data and system states in real time.</li>
+            <li>
+              <strong>Gazebo:</strong> Simulates physical environments and
+              vehicle dynamics.
+            </li>
+            <li>
+              <strong>RTAB-Map:</strong> Creates virtual maps from sensor data.
+            </li>
+            <li>
+              <strong>RViz:</strong> Visualizes sensor data and system states in
+              real time.
+            </li>
           </ul>
         </div>
       </section>

@@ -21,7 +21,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body className={`antialiased`}>
-        <Navbar/> 
+        <Navbar />
         <Providers>{children}</Providers>
         <Ending start={'#1b1149'} end={'#000000'} />
       </body>

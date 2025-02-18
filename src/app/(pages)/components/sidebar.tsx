@@ -1,29 +1,22 @@
-"use client";
+'use client';
 
 import React from 'react';
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import { ScrollArea } from "@/components/ui/scroll-area";
+import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
+import { ScrollArea } from '@/components/ui/scroll-area';
 import {
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
-} from "@/components/ui/sheet";
+} from '@/components/ui/sheet';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
-import { 
-  Home,
-  Info,
-  Users,
-  Folder,
-  X,
-  ChevronRight
-} from "lucide-react";
+} from '@/components/ui/accordion';
+import { Home, Info, Users, Folder, X, ChevronRight } from 'lucide-react';
 
 interface SideBarProps {
   isSidebarOpen: boolean;
@@ -33,7 +26,6 @@ interface SideBarProps {
 
 const MENU_ITEMS = [
   { id: 'home', label: 'Home', icon: Home, section: 'Home', path: '/' },
-
 ];
 
 const PROJECT_ITEMS = [
@@ -42,15 +34,19 @@ const PROJECT_ITEMS = [
   { id: 'mini-float', label: 'Mini Float', path: '/projects/minifloat' },
 ];
 
-export default function SideBar({ isSidebarOpen, toggleSidebar, scrollToSection }: SideBarProps) {
+export default function SideBar({
+  isSidebarOpen,
+  toggleSidebar,
+  scrollToSection,
+}: SideBarProps) {
   const navigateTo = (path: string) => {
     window.location.href = path;
   };
 
   return (
     <Sheet open={isSidebarOpen} onOpenChange={toggleSidebar}>
-      <SheetContent 
-        side="left" 
+      <SheetContent
+        side="left"
         className="w-64 p-0 bg-black border-r border-blue-900"
       >
         <SheetHeader className="p-4 border-b border-blue-900">
@@ -60,7 +56,6 @@ export default function SideBar({ isSidebarOpen, toggleSidebar, scrollToSection 
               alt="RoboSub Logo"
               className="w-10 h-10"
             />
-
           </div>
         </SheetHeader>
 
@@ -101,7 +96,6 @@ export default function SideBar({ isSidebarOpen, toggleSidebar, scrollToSection 
                           toggleSidebar();
                         }}
                       >
-                        
                         {project.label}
                       </Button>
                     ))}

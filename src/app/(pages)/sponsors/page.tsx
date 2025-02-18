@@ -1,42 +1,45 @@
-"use client";
-import React from "react";
-import { Card, CardHeader, CardContent } from "@/components/ui/card";
-import { motion } from "framer-motion";
-import Image from "next/image";
+'use client';
+import React from 'react';
+import { Card, CardHeader, CardContent } from '@/components/ui/card';
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const SponsorsSection = () => {
   const sponsorTiers = [
     {
-      name: "Title Sponsors",
-      color: "#1a6cad",
+      name: 'Title Sponsors',
+      color: '#1a6cad',
       sponsors: [
         {
-          name: "",
+          name: '',
           description:
-            "Veolia is a global leader in resource management, dedicated to delivering innovative solutions that drive sustainable development.",
-          img: "/imgs/sponsors/veolia.png",
+            'Veolia is a global leader in resource management, dedicated to delivering innovative solutions that drive sustainable development.',
+          img: '/imgs/sponsors/veolia.png',
         },
         {
-          name:"",
-          description: "The UTD Jonsson School provides financial and logistical support of our organization to become successful",
-          img: "/imgs/sponsors/UTDJonssonSchool.png",
+          name: '',
+          description:
+            'The UTD Jonsson School provides financial and logistical support of our organization to become successful',
+          img: '/imgs/sponsors/UTDJonssonSchool.png',
         },
       ],
     },
     {
-      name: "Gold Sponsors",
-      color: "#1a6cad",
+      name: 'Gold Sponsors',
+      color: '#1a6cad',
       sponsors: [
         {
-          name: "",
-          description: "Providing CAD licenses to help us bring our ideas to life",
-          img: "/imgs/sponsors/solidWorks.jpg",
+          name: '',
+          description:
+            'Providing CAD licenses to help us bring our ideas to life',
+          img: '/imgs/sponsors/solidWorks.jpg',
         },
         {
-          name: "",
-          description: "Westlake Epoxy is a global manufacturer and supplier of epoxy resin systems. They provided expertise and epoxy to support the manufacturing of our RoboBoat hull. ",
-          img: "/imgs/sponsors/Westlake-Epoxy-Logo.png"
-        }
+          name: '',
+          description:
+            'Westlake Epoxy is a global manufacturer and supplier of epoxy resin systems. They provided expertise and epoxy to support the manufacturing of our RoboBoat hull. ',
+          img: '/imgs/sponsors/Westlake-Epoxy-Logo.png',
+        },
       ],
     },
   ];
@@ -75,13 +78,23 @@ const SponsorsSection = () => {
           viewport={{ once: true }}
           className="mb-16 text-center bg-[#125d99] p-8 rounded-lg"
         >
-          <h3 className="text-2xl font-bold text-white mb-4">Become a Sponsor</h3>
-          <h3 className="text-2xl font bold text-[#53cbec]">Interested in sponsoring? Help us reach our goal!</h3>
+          <h3 className="text-2xl font-bold text-white mb-4">
+            Become a Sponsor
+          </h3>
+          <h3 className="text-2xl font bold text-[#53cbec]">
+            Interested in sponsoring? Help us reach our goal!
+          </h3>
           <p className="text-white mb-6 max-w-2xl mx-auto text-justify">
-            As a student-led organization, RoboSub at UTD thrives on the generosity of sponsors like you. Your support enables us to design and build cutting-edge robotic submarines, conduct research, and compete in the annual MATE ROV and RoboBoat competitions. By partnering with us, you directly contribute to the advancement of underwater robotics and empower the next generation of engineers.
+            As a student-led organization, RoboSub at UTD thrives on the
+            generosity of sponsors like you. Your support enables us to design
+            and build cutting-edge robotic submarines, conduct research, and
+            compete in the annual MATE ROV and RoboBoat competitions. By
+            partnering with us, you directly contribute to the advancement of
+            underwater robotics and empower the next generation of engineers.
           </p>
           <p className="text-white mb-6 max-w-2xl mx-auto text-justify">
-            To get more information about sponsorship, please contact our President, Ken Shibatani, at ken.shibatani@utdallas.edu.
+            To get more information about sponsorship, please contact our
+            President, Ken Shibatani, at ken.shibatani@utdallas.edu.
           </p>
 
           <button className="px-8 py-3 bg-[#53cbec] text-[#1b1149] font-bold rounded-full hover:bg-[#7dd7ef] transition-colors duration-300">
@@ -102,9 +115,14 @@ const SponsorsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-white mb-4">Thank you to our sponsors!</h2>
+          <h2 className="text-4xl font-bold text-white mb-4">
+            Thank you to our sponsors!
+          </h2>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            We are grateful for the support of our sponsors who make our innovative underwater robotics projects possible. Their contributions drive our success and enable technological advancement.
+            We are grateful for the support of our sponsors who make our
+            innovative underwater robotics projects possible. Their
+            contributions drive our success and enable technological
+            advancement.
           </p>
         </motion.div>
 
@@ -170,7 +188,9 @@ const SponsorsSection = () => {
                         <h4 className="text-xl font-bold text-white text-justify">
                           {sponsor.name}
                         </h4>
-                        <p className="text-gray-300 text-justify">{sponsor.description}</p>
+                        <p className="text-gray-300 text-justify">
+                          {sponsor.description}
+                        </p>
                       </CardHeader>
                     </Card>
                   </motion.div>

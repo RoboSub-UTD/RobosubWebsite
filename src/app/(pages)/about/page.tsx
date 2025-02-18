@@ -1,36 +1,38 @@
-"use client"
+'use client';
 import React from 'react';
-import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
-import { Anchor, Target, Trophy, Users } from "lucide-react";
+import { motion } from 'framer-motion';
+import { Card, CardContent } from '@/components/ui/card';
+import { Anchor, Target, Trophy, Users } from 'lucide-react';
 import { redirect, useRouter } from 'next/navigation';
 
-
 const AboutSection = () => {
-
   const router = useRouter();
 
   const highlights = [
     {
       icon: Trophy,
-      title: "Competition Ready",
-      description: "Participating in international competitions, showcasing our innovative solutions"
+      title: 'Competition Ready',
+      description:
+        'Participating in international competitions, showcasing our innovative solutions',
     },
     {
       icon: Users,
-      title: "Student-Led",
-      description: "Entirely managed and operated by passionate UTD students across multiple disciplines"
+      title: 'Student-Led',
+      description:
+        'Entirely managed and operated by passionate UTD students across multiple disciplines',
     },
     {
       icon: Target,
-      title: "Mission-Driven",
-      description: "Focused on advancing marine robotic technology through practical application"
+      title: 'Mission-Driven',
+      description:
+        'Focused on advancing marine robotic technology through practical application',
     },
     {
       icon: Anchor,
-      title: "Real-World Impact",
-      description: "Developing solutions that contribute to marine research and underwater exploration"
-    }
+      title: 'Real-World Impact',
+      description:
+        'Developing solutions that contribute to marine research and underwater exploration',
+    },
   ];
 
   return (
@@ -46,7 +48,7 @@ const AboutSection = () => {
           transition={{
             duration: 8,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: 'easeInOut',
           }}
         />
         <motion.div
@@ -58,7 +60,7 @@ const AboutSection = () => {
           transition={{
             duration: 8,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: 'easeInOut',
           }}
         />
       </div>
@@ -72,16 +74,31 @@ const AboutSection = () => {
           viewport={{ once: true }}
           className="text-center max-w-4xl mx-auto mb-16"
         >
-          <h2 className="text-4xl font-bold text-white mb-6">About RoboSub UTD</h2>
+          <h2 className="text-4xl font-bold text-white mb-6">
+            About RoboSub UTD
+          </h2>
           <div className="prose prose-lg text-gray-300 mx-auto space-y-6">
             <p>
-              RoboSub UTD is a competitive student organization dedicated to designing, building, and programming remote operated vehicles (ROVs) and autonomous surface vehicles (ASV's). Our team participates in the annual MATE ROV and RoboBoat competitions, where we showcase our innovative solutions in submarine robotics and autonomous systems.
+              RoboSub UTD is a competitive student organization dedicated to
+              designing, building, and programming remote operated vehicles
+              (ROVs) and autonomous surface vehicles (ASV's). Our team
+              participates in the annual MATE ROV and RoboBoat competitions,
+              where we showcase our innovative solutions in submarine robotics
+              and autonomous systems.
             </p>
             <p>
-              Founded by passionate engineering students, our team brings together diverse talents from computer science, mechanical engineering, electrical engineering, and other disciplines. We work collaboratively to tackle complex challenges in underwater robotics, from advanced computer vision systems to sophisticated mechanical designs.
+              Founded by passionate engineering students, our team brings
+              together diverse talents from computer science, mechanical
+              engineering, electrical engineering, and other disciplines. We
+              work collaboratively to tackle complex challenges in underwater
+              robotics, from advanced computer vision systems to sophisticated
+              mechanical designs.
             </p>
             <p>
-              Through hands-on experience and mentorship, our members gain valuable skills in robotics, software development, and systems integration. We're not just building submarines – we're developing the next generation of engineers and problem-solvers.
+              Through hands-on experience and mentorship, our members gain
+              valuable skills in robotics, software development, and systems
+              integration. We're not just building submarines – we're developing
+              the next generation of engineers and problem-solvers.
             </p>
           </div>
         </motion.div>
@@ -97,22 +114,25 @@ const AboutSection = () => {
           {highlights.map((item, index) => {
             const Icon = item.icon;
             return (
-              <Card key={index} className="bg-[#125d99] border-none hover:bg-[#1a6cad] transition-all duration-300">
+              <Card
+                key={index}
+                className="bg-[#125d99] border-none hover:bg-[#1a6cad] transition-all duration-300"
+              >
                 <CardContent className="p-6 text-center">
                   <div className="mb-4 flex justify-center">
                     <div className="p-3 rounded-full bg-[#1b1149]">
                       <Icon size={24} className="text-[#53cbec]" />
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                  <h3 className="text-xl font-bold text-white mb-2">
+                    {item.title}
+                  </h3>
                   <p className="text-gray-300">{item.description}</p>
                 </CardContent>
               </Card>
             );
           })}
         </motion.div>
-
-
 
         {/* Call to Action */}
         <motion.div
@@ -122,7 +142,12 @@ const AboutSection = () => {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <button onClick={() => { (router.push('/projects')) }} className="px-8 py-3 bg-[#53cbec] text-[#1b1149] text-3xl font-bold rounded-full hover:bg-[#7dd7ef] transition-colors duration-300">
+          <button
+            onClick={() => {
+              router.push('/projects');
+            }}
+            className="px-8 py-3 bg-[#53cbec] text-[#1b1149] text-3xl font-bold rounded-full hover:bg-[#7dd7ef] transition-colors duration-300"
+          >
             Learn More About Our Projects
           </button>
         </motion.div>
@@ -137,10 +162,17 @@ const AboutSection = () => {
           <h2 className="text-4xl font-bold text-white mb-6">Our Awards</h2>
 
           <div className="prose prose-lg text-gray-300 mx-auto space-y-6 flex flex-col md:flex-row gap-10 justify-center">
-            <img alt="award1" src="/imgs/awards/doc.png" className="max-w-[500px]" />
-            <img alt="award2" src="/imgs/awards/third.png" className="max-w-[500px]" />
+            <img
+              alt="award1"
+              src="/imgs/awards/doc.png"
+              className="max-w-[500px]"
+            />
+            <img
+              alt="award2"
+              src="/imgs/awards/third.png"
+              className="max-w-[500px]"
+            />
           </div>
-
         </motion.div>
       </div>
     </div>

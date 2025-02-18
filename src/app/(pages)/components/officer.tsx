@@ -1,6 +1,6 @@
 import React from 'react';
-import { Card, CardContent } from "@/components/ui/card";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Card, CardContent } from '@/components/ui/card';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 
 function Officer({
   img,
@@ -15,7 +15,7 @@ function Officer({
 }) {
   const initials = name
     .split(' ')
-    .map(word => word[0])
+    .map((word) => word[0])
     .join('')
     .toUpperCase();
 

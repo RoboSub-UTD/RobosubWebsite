@@ -1,6 +1,6 @@
-"use client";
-import React from "react";
-import { useRouter } from "next/navigation";
+'use client';
+import React from 'react';
+import { useRouter } from 'next/navigation';
 
 const RoboBoatPage = () => {
   const router = useRouter();
@@ -20,7 +20,8 @@ const RoboBoatPage = () => {
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
           <h1 className="text-5xl font-bold mb-4">RoboBoat: Team GalaxSea</h1>
           <p className="text-xl max-w-2xl">
-            Learn more about the design and innovation behind Luna, GalaxSea's first Autonomous Surface Vehicle.
+            Learn more about the design and innovation behind Luna, GalaxSea's
+            first Autonomous Surface Vehicle.
           </p>
         </div>
       </section>
@@ -30,7 +31,8 @@ const RoboBoatPage = () => {
         <div className="max-w-4xl mx-auto text-center mb-12">
           <h2 className="text-4xl font-bold mb-4">Technical Overview</h2>
           <p className="text-lg text-gray-300">
-            Luna was built with modularity, accessibility, and simplicity in mind, laying the foundation for future ASV designs.
+            Luna was built with modularity, accessibility, and simplicity in
+            mind, laying the foundation for future ASV designs.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -38,12 +40,15 @@ const RoboBoatPage = () => {
           <div className="bg-[#125d99] p-6 rounded-lg shadow-lg">
             <h3 className="text-2xl font-bold mb-4">Software Department</h3>
             <p className="text-gray-300 mb-4">
-              The software team develops and tests the programs enabling Luna's autonomy. Explore more:
+              The software team develops and tests the programs enabling Luna's
+              autonomy. Explore more:
             </p>
             <ul className="space-y-2">
               <li>
                 <button
-                  onClick={() => handleNavigation("/roboboat/software/perception")}
+                  onClick={() =>
+                    handleNavigation('/roboboat/software/perception')
+                  }
                   className="text-[#53cbec] hover:underline"
                 >
                   Perception: Object detection and navigation
@@ -51,7 +56,7 @@ const RoboBoatPage = () => {
               </li>
               <li>
                 <button
-                  onClick={() => handleNavigation("/roboboat/software/ros")}
+                  onClick={() => handleNavigation('/roboboat/software/ros')}
                   className="text-[#53cbec] hover:underline"
                 >
                   ROS Integration
@@ -59,7 +64,9 @@ const RoboBoatPage = () => {
               </li>
               <li>
                 <button
-                  onClick={() => handleNavigation("/roboboat/software/simulations")}
+                  onClick={() =>
+                    handleNavigation('/roboboat/software/simulations')
+                  }
                   className="text-[#53cbec] hover:underline"
                 >
                   Simulations
@@ -72,12 +79,13 @@ const RoboBoatPage = () => {
           <div className="bg-[#125d99] p-6 rounded-lg shadow-lg">
             <h3 className="text-2xl font-bold mb-4">Hardware Department</h3>
             <p className="text-gray-300 mb-4">
-              The hardware team builds Luna's physical components. Learn more about:
+              The hardware team builds Luna's physical components. Learn more
+              about:
             </p>
             <ul className="space-y-2">
               <li>
                 <button
-                  onClick={() => handleNavigation("/roboboat/hardware/hull")}
+                  onClick={() => handleNavigation('/roboboat/hardware/hull')}
                   className="text-[#53cbec] hover:underline"
                 >
                   Hull Design
@@ -85,7 +93,9 @@ const RoboBoatPage = () => {
               </li>
               <li>
                 <button
-                  onClick={() => handleNavigation("/roboboat/hardware/propulsion")}
+                  onClick={() =>
+                    handleNavigation('/roboboat/hardware/propulsion')
+                  }
                   className="text-[#53cbec] hover:underline"
                 >
                   Propulsion System
@@ -93,7 +103,7 @@ const RoboBoatPage = () => {
               </li>
               <li>
                 <button
-                  onClick={() => handleNavigation("/roboboat/hardware/frame")}
+                  onClick={() => handleNavigation('/roboboat/hardware/frame')}
                   className="text-[#53cbec] hover:underline"
                 >
                   Frame Design
@@ -101,7 +111,7 @@ const RoboBoatPage = () => {
               </li>
               <li>
                 <button
-                  onClick={() => handleNavigation("/roboboat/hardware/storage")}
+                  onClick={() => handleNavigation('/roboboat/hardware/storage')}
                   className="text-[#53cbec] hover:underline"
                 >
                   Electronics Storage
@@ -109,7 +119,9 @@ const RoboBoatPage = () => {
               </li>
               <li>
                 <button
-                  onClick={() => handleNavigation("/roboboat/hardware/launchers")}
+                  onClick={() =>
+                    handleNavigation('/roboboat/hardware/launchers')
+                  }
                   className="text-[#53cbec] hover:underline"
                 >
                   Ball and Water Launchers
@@ -127,7 +139,7 @@ const RoboBoatPage = () => {
             <ul className="space-y-2">
               <li>
                 <button
-                  onClick={() => handleNavigation("/roboboat/electrical/esc")}
+                  onClick={() => handleNavigation('/roboboat/electrical/esc')}
                   className="text-[#53cbec] hover:underline"
                 >
                   ESC Carrier Board
@@ -135,7 +147,9 @@ const RoboBoatPage = () => {
               </li>
               <li>
                 <button
-                  onClick={() => handleNavigation("/roboboat/electrical/power-board")}
+                  onClick={() =>
+                    handleNavigation('/roboboat/electrical/power-board')
+                  }
                   className="text-[#53cbec] hover:underline"
                 >
                   Power Control Board
@@ -143,7 +157,9 @@ const RoboBoatPage = () => {
               </li>
               <li>
                 <button
-                  onClick={() => handleNavigation("/roboboat/electrical/battery")}
+                  onClick={() =>
+                    handleNavigation('/roboboat/electrical/battery')
+                  }
                   className="text-[#53cbec] hover:underline"
                 >
                   Battery Design
@@ -151,7 +167,9 @@ const RoboBoatPage = () => {
               </li>
               <li>
                 <button
-                  onClick={() => handleNavigation("/roboboat/electrical/safety")}
+                  onClick={() =>
+                    handleNavigation('/roboboat/electrical/safety')
+                  }
                   className="text-[#53cbec] hover:underline"
                 >
                   Safety and Reliability

@@ -1,7 +1,7 @@
-"use client"
+'use client';
 import React from 'react';
-import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
+import { motion } from 'framer-motion';
+import { Card, CardContent } from '@/components/ui/card';
 
 const AboutSection = () => {
   return (
@@ -17,7 +17,7 @@ const AboutSection = () => {
           transition={{
             duration: 8,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: 'easeInOut',
           }}
         />
         <motion.div
@@ -29,14 +29,16 @@ const AboutSection = () => {
           transition={{
             duration: 8,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: 'easeInOut',
           }}
         />
       </div>
 
       <div className="container mx-auto relative z-10">
-        <h2 className="text-5xl font-bold text-white mb-12 text-center">About RoboSub UTD</h2>
-        
+        <h2 className="text-5xl font-bold text-white mb-12 text-center">
+          About RoboSub UTD
+        </h2>
+
         {/* Main Content - Flex Container */}
         <div className="flex flex-col lg:flex-row gap-12 items-center max-w-7xl mx-auto">
           {/* Photo Section - Left Side */}
@@ -76,9 +78,13 @@ const AboutSection = () => {
               viewport={{ once: true }}
               className="text-xl leading-relaxed text-gray-300"
             >
-              RoboSub UTD is a competitive student organization dedicated to designing, building, and programming remote operated vehicles (ROVs) and autonomous . Our team competed in the annual MATE ROV and RoboBoat competitions, where we showcase our innovative solutions in submarine robotics and autonomous systems.
+              RoboSub UTD is a competitive student organization dedicated to
+              designing, building, and programming remote operated vehicles
+              (ROVs) and autonomous . Our team competed in the annual MATE ROV
+              and RoboBoat competitions, where we showcase our innovative
+              solutions in submarine robotics and autonomous systems.
             </motion.p>
-            
+
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -86,9 +92,14 @@ const AboutSection = () => {
               viewport={{ once: true }}
               className="text-xl leading-relaxed text-gray-300"
             >
-              Founded by passionate engineering students, our team brings together diverse talents from computer science, mechanical engineering, electrical engineering, and other disciplines. We work collaboratively to tackle complex challenges in underwater robotics, from advanced computer vision systems to sophisticated mechanical designs.
+              Founded by passionate engineering students, our team brings
+              together diverse talents from computer science, mechanical
+              engineering, electrical engineering, and other disciplines. We
+              work collaboratively to tackle complex challenges in underwater
+              robotics, from advanced computer vision systems to sophisticated
+              mechanical designs.
             </motion.p>
-            
+
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -96,7 +107,10 @@ const AboutSection = () => {
               viewport={{ once: true }}
               className="text-xl leading-relaxed text-gray-300"
             >
-              Through hands-on experience and mentorship, our members gain valuable skills in robotics, software development, and systems integration. We're not just building submarines – we're developing the next generation of engineers and problem-solvers.
+              Through hands-on experience and mentorship, our members gain
+              valuable skills in robotics, software development, and systems
+              integration. We're not just building submarines – we're developing
+              the next generation of engineers and problem-solvers.
             </motion.p>
           </motion.div>
         </div>
