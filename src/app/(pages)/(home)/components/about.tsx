@@ -78,7 +78,7 @@ const AboutSection = () => {
               viewport={{ once: true }}
               className="text-xl leading-relaxed text-gray-300"
             >
-              RoboSub UTD is a competitive student organization dedicated to
+              RoboSub UTD is a 501(c)(3) competitive student organization dedicated to
               designing, building, and programming remote operated vehicles
               (ROVs) and autonomous . Our team competed in the annual MATE ROV
               and RoboBoat competitions, where we showcase our innovative
