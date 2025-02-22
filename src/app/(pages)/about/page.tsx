@@ -79,7 +79,7 @@ const AboutSection = () => {
           </h2>
           <div className="prose prose-lg text-gray-300 mx-auto space-y-6">
             <p>
-              RoboSub UTD is a competitive student organization dedicated to
+              RoboSub UTD is a 501(c)(3) competitive student organization dedicated to
               designing, building, and programming remote operated vehicles
               (ROVs) and autonomous surface vehicles (ASV's). Our team
               participates in the annual MATE ROV and RoboBoat competitions,
